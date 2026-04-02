@@ -1,137 +1,193 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة المنتج</title>
+    <title>صفحة الهبوط - المنتج ديالك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ===== CSS داخلي ===== */
+        :root {
+            --primary-color: #e67e22; /* لون زر الطلب - تقدر تبدلو */
+            --text-dark: #2c3e50;
+            --bg-light: #f9f9f9;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #fff;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        .header {
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 30px;
         }
 
-        .header h1 {
-            color: #e60023;
+        /* 1. Headline Section */
+        header {
+            padding: 40px 0;
+            background-color: var(--bg-light);
         }
 
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+        h1 {
+            font-size: 2rem;
+            color: #d35400;
+            margin-bottom: 10px;
         }
 
-        .product-card {
-            width: 260px;
-            background: #fff;
+        .sub-headline {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        /* 2. Media Section */
+        .media-container {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .media-container img, .media-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* 3. Benefits Section */
+        .benefits {
+            padding: 40px 0;
+            text-align: right;
+        }
+
+        .benefit-item {
+            margin-bottom: 20px;
             padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: 0.2s;
+            border-right: 4px solid var(--primary-color);
+            background: #fff9f5;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        /* 4. Social Proof */
+        .testimonials {
+            background: var(--bg-light);
+            padding: 40px 0;
         }
 
-        .product-card img {
-            width: 100%;
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
-            object-fit: cover;
+            margin-bottom: 15px;
+            font-style: italic;
         }
 
-        .product-name {
-            margin: 12px 0 6px;
-            font-size: 18px;
-            color: #333;
+        /* 5. The Offer */
+        .offer-box {
+            border: 2px dashed #e74c3c;
+            padding: 30px;
+            margin: 40px 0;
+            background-color: #fdf2f2;
         }
 
-        .product-price {
-            color: #e60023;
-            font-size: 20px;
+        .price {
+            font-size: 2.5rem;
             font-weight: bold;
+            color: #c0392b;
         }
 
-        .btn-add {
-            background: #e60023;
-            color: #fff;
-            border: none;
-            padding: 10px 0;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            transition: 0.2s;
-        }
-
-        .btn-add:hover {
-            background: #c3001f;
-        }
-
-        .contact {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 18px;
-        }
-
-        .contact a {
-            color: #e60023;
+        /* 6. Call to Action Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5rem;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: bold;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
+        footer {
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .cta-button { width: 80%; font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>منتجاتنا</h1>
-        <p>أفضل جودة وأسعار ممتازة</p>
-    </div>
+    <header>
+        <div class="container">
+            <h1>هنا دير العنوان القوي (مثلا: تخلصي من مشاكل البشرة في 7 أيام فقط!)</h1>
+            <p class="sub-headline">هنا دير وصف صغير كيشجع (مثلا: الحل الطبيعي والأكثر مبيعاً في المغرب)</p>
+        </div>
+    </header>
 
-    <div class="products-container">
-
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300" alt="منتج 1">
-            <h3 class="product-name">اسم المنتج 1</h3>
-            <p class="product-price">299 د.م</p>
-            <button class="btn-add">أضف إلى السلة</button>
+    <div class="container">
+        <div class="media-container">
+            <img src="https://via.placeholder.com/600x400" alt="صورة المنتج">
         </div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300" alt="منتج 2">
-            <h3 class="product-name">اسم المنتج 2</h3>
-            <p class="product-price">349 د.م</p>
-            <button class="btn-add">أضف إلى السلة</button>
-        </div>
+        <section class="benefits">
+            <h2>علاش غادي يعجبك هاد المنتج؟</h2>
+            <div class="benefit-item">
+                <strong>ميزة 1:</strong> هنا شرح كيفاش غينفع الكليان (مثلا: كيرطب البشرة بعمق).
+            </div>
+            <div class="benefit-item">
+                <strong>ميزة 2:</strong> ميزة تانية (مثلا: مكونات طبيعية 100% بدون مواد كيماوية).
+            </div>
+            <div class="benefit-item">
+                <strong>ميزة 3:</strong> ميزة تالتة (مثلا: سهل الاستعمال وكيناسب جميع أنواع البشرة).
+            </div>
+        </section>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x300" alt="منتج 3">
-            <h3 class="product-name">اسم المنتج 3</h3>
-            <p class="product-price">399 د.م</p>
-            <button class="btn-add">أضف إلى السلة</button>
-        </div>
+        <section class="testimonials">
+            <h2>شنو كايقولو الزبناء ديالينا؟</h2>
+            <div class="testimonial-card">
+                "بصراحة جربت بزاف ديال المنتجات ولكن هادا هو اللي عطاني نتيجة من السيمانة اللولة."
+                <br><strong>- سناء من الدار البيضاء</strong>
+            </div>
+            <div class="testimonial-card">
+                "التوصيل كان سريع والمنتج وصلني كيفما فالتصويرة، شكراً بزاف."
+                <br><strong>- محمد من مراكش</strong>
+            </div>
+        </section>
 
+        <div class="offer-box">
+            <h3>عرض خاص ومحدود!</h3>
+            <p>توصيل فابور + الدفع عند الاستلام</p>
+            <div class="price">199 درهم</div>
+            <p style="text-decoration: line-through; color: #7f8c8d;">عوض 399 درهم</p>
+            
+            <a href="رابط_الواتساب_أو_Google_Form_هنا" class="cta-button">إضغط هنا للطلب الآن</a>
+        </div>
     </div>
 
-    <div class="contact">
-        تواصل معنا عبر الواتساب: <a href="tel:+212691444558">+212 691444558</a>
-    </div>
+    <footer>
+        <div class="container">
+            &copy; 2026 جميع الحقوق محفوظة لمتجركم
+        </div>
+    </footer>
 
 </body>
 </html>
