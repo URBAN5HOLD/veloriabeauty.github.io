@@ -15,7 +15,6 @@
         * { box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; margin: 0; padding: 0; background-color: #fff; text-align: center; line-height: 1.6; color: #333; }
 
-        /* الهيدر مع اللوغو */
         .brand-header {
             padding: 20px 0;
             background-color: #fff;
@@ -87,7 +86,7 @@
     <div class="promo-bar">🚚 توصيل مجاني + الدفع عند الاستلام 🤝</div>
 
     <div class="timer-container">
-        <p style="margin:0; font-weight: bold;">سالي الخصم ديال 50% :</p>
+        <p style="margin:0; font-weight: bold;">مدة الخصم 50% تنتهي في:</p>
         <div id="timer">12:00:00</div>
     </div>
 
@@ -95,9 +94,9 @@
         <h1>استوديو جمال متنقل: حقيبة الماكياج الذكية ✨</h1>
         <img src="1.jpg" class="hero-img" alt="حقيبة الماكياج">
         <div class="price-box">
-            <span style="text-decoration: line-through; color: #999; font-size: 20px;">598 درهم</span><br>
-            <span class="new-price">299 درهم فقط</span><br>
-            <span class="badge">عرض المجموعة المتكاملة (الحقيبة + العلبة)</span>
+            <span style="text-decoration: line-through; color: #999; font-size: 20px;">538 درهم</span><br>
+            <span class="new-price">269 درهم فقط</span><br>
+            <span class="badge">خصم حصري 50%- لفترة محدودة</span>
         </div>
     </section>
 
@@ -166,9 +165,9 @@
     </section>
 
     <section class="final-proof">
-        <h2>طلبيات زبوناتنا الوفيات 📸</h2>
-        <img src="4.jpg" class="hero-img" alt="صورة الطلبية">
-        <p>فيلوريا تضمن لك الجودة والمصداقية في كل طلبية.</p>
+        <h2>توصيل سريع ومضمون في أقل من 24 ساعة 🚀</h2>
+        <img src="4.jpg" class="hero-img" alt="توصيل سريع">
+        <p>فيلوريا تضمن لك وصول طلبيتك في وقت قياسي وبجودة عالية في جميع أنحاء المغرب.</p>
     </section>
 
     <div class="spacer"></div>
@@ -200,7 +199,7 @@
                 if (--timer < 0) timer = duration;
             }, 1000);
         }
-        window.onload = function () { startTimer(60*60*5, document.querySelector('#timer')); };
+        window.onload = function () { startTimer(60*60*12, document.querySelector('#timer')); };
     </script>
 </body>
 </html>
