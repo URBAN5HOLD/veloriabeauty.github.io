@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -88,8 +87,8 @@
     <div class="promo-bar">🚚 توصيل مجاني + الدفع عند الاستلام 🤝</div>
 
     <div class="timer-container">
-        <p style="margin:0; font-weight: bold;">سالي الخصم ديال 50% فـ:</p>
-        <div id="timer">05:00:00</div>
+        <p style="margin:0; font-weight: bold;">سالي الخصم ديال 50% :</p>
+        <div id="timer">12:00:00</div>
     </div>
 
     <section class="hero">
