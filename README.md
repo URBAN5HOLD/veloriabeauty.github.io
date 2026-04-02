@@ -189,7 +189,7 @@
 
     <div class="cta-container">
         <div class="container">
-            <a href="https://wa.me/2126XXXXXXXX" class="btn-order">اطلبي الآن عبر الواتساب</a>
+            <a href="https://wa.me/212691444558" class="btn-order">اطلبي الآن عبر الواتساب</a>
             <p style="font-size: 0.8rem; margin: 5px 0 0;">(العرض سينتهي قريباً!)</p>
         </div>
     </div>
