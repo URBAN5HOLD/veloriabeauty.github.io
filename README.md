@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -22,46 +21,65 @@
 
         .hero { padding: 20px; }
         h1 { color: var(--dark-pink); font-size: 1.7rem; }
-        .hero-img { width: 95%; max-width: 500px; border-radius: 15px; margin-bottom: 20px; }
+        .hero-img { width: 95%; max-width: 500px; border-radius: 15px; margin: 0 auto 20px; display: block; }
 
-        /* الأثمنة */
         .price-box { margin: 15px 0; }
         .new-price { font-size: 30px; color: #e91e63; font-weight: bold; }
         .badge { background: #ff5252; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: 14px; }
 
-        /* قسم 3 صور مع مساحة كبيرة للشرح */
         .info-card { padding: 40px 15px; border-bottom: 1px solid #eee; }
-        .info-card img { width: 95%; max-width: 480px; border-radius: 10px; margin-bottom: 20px; }
-        .info-card p { font-size: 1.2rem; color: #444; padding: 10px 20px; min-height: 80px; }
+        .info-card img { width: 95%; max-width: 480px; border-radius: 10px; margin: 0 auto 20px; display: block; }
+        .info-card p { font-size: 1.2rem; color: #444; padding: 10px 20px; max-width: 600px; margin: 0 auto; }
 
-        /* قسم التعاليق */
         .reviews-container { background: var(--main-pink); padding: 40px 15px; }
         .review-card {
             background: #fff; padding: 15px; border-radius: 12px; margin: 10px auto;
             width: 100%; max-width: 500px; text-align: right; display: flex; gap: 12px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        /* إخفاء التعاليق الزائدة */
         .extra-reviews { display: none; }
-        
-        .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background: #ddd; }
+        .profile-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         .stars { color: #ffc107; font-size: 12px; }
         .review-name { font-weight: bold; font-size: 15px; }
 
-        /* زر قراءة المزيد */
         .show-more-btn {
             background: #fff; border: 1px solid var(--dark-pink); color: var(--dark-pink);
             padding: 10px 25px; border-radius: 25px; cursor: pointer; margin: 20px 0; font-weight: bold;
         }
 
-        /* الصورة الرابعة في الأخير */
         .final-proof { padding: 40px 15px; background: #fff; }
 
-        .sticky-footer { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 15px; z-index: 9999; display: flex; justify-content: center; }
-        .cta-btn { background: var(--green-wa); color: #fff; width: 90%; max-width: 400px; padding: 16px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.3rem; animation: pulse 2.5s infinite; }
+        /* التعديل المهم لزر الواتساب */
+        .sticky-footer { 
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            background: #fff; 
+            padding: 15px 0; 
+            z-index: 9999; 
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center; /* هادي كتجيب الزر للوسط */
+        }
+        
+        .cta-btn { 
+            background: var(--green-wa); 
+            color: #fff; 
+            width: 85%; /* العرض لي غياخدو الزر فالتلفون */
+            max-width: 400px; 
+            padding: 16px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.3rem; 
+            display: block; 
+            margin: 0 auto; /* تأكيد إضافي للوسط */
+            animation: pulse 2.5s infinite; 
+        }
 
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        .spacer { height: 100px; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+        .spacer { height: 110px; }
     </style>
 </head>
 <body>
@@ -83,17 +101,17 @@
 
     <div class="info-card">
         <img src="https://via.placeholder.com/500x500" alt="صورة 1">
-        <p>هنا اكتبي شرح مفصل للميزة الأولى.. (مثلا: كيفاش المشط كيحمي الزغبة من التقصف بفضل تقنية السيراميك)</p>
+        <p>اكتبي هنا شرح الميزة الأولى بالتفصيل..</p>
     </div>
 
     <div class="info-card">
         <img src="https://via.placeholder.com/500x500" alt="صورة 2">
-        <p>هنا اكتبي شرح مفصل للميزة الثانية.. (مثلا: السرعة في التسخين والنتيجة اللي كتدوم لعدة أيام)</p>
+        <p>اكتبي هنا شرح الميزة الثانية بالتفصيل..</p>
     </div>
 
     <div class="info-card">
         <img src="https://via.placeholder.com/500x500" alt="صورة 3">
-        <p>هنا اكتبي شرح مفصل للميزة الثالثة.. (مثلا: سهولة الحمل والاستخدام في السفر والمناسبات الزربانة)</p>
+        <p>اكتبي هنا شرح الميزة الثالثة بالتفصيل..</p>
     </div>
 
     <section class="reviews-container">
@@ -104,7 +122,7 @@
             <div>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <span class="review-name">سناء - الدار البيضاء</span>
-                <p style="font-size:14px; margin:5px 0;">بصراحة واعر بزااااف، هناني من السيشوار. كيسرح دغيا ❤️</p>
+                <p style="font-size:14px; margin:5px 0;">بصراحة واعر بزااااف، هناني من السيشوار. ❤️</p>
             </div>
         </div>
 
@@ -131,7 +149,7 @@
             <div>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <span class="review-name">خديجة</span>
-                <p style="font-size:14px; margin:5px 0;">خديت جوج ليا ولختي، عجبنا بزااف مكيحرقش الشعر 🎀</p>
+                <p style="font-size:14px; margin:5px 0;">خديت جوج ليا ولختي، عجبنا بزااف 🎀</p>
             </div>
         </div>
 
@@ -140,7 +158,7 @@
                 <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150" class="profile-img">
                 <div><div class="stars">⭐⭐⭐⭐⭐</div><span class="review-name">إيمان</span><p>طوب طوب كنصحكم بيه البنات 👌</p></div>
             </div>
-            </div>
+        </div>
 
         <button class="show-more-btn" id="showMore" onclick="toggleReviews()">قراءة المزيد من الآراء</button>
     </section>
@@ -170,7 +188,6 @@
             }
         }
 
-        // Timer Script
         function startTimer(duration, display) {
             var timer = duration, hours, minutes, seconds;
             setInterval(function () {
