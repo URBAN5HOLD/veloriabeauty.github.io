@@ -1,16 +1,16 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lisseur Professionnel - صالون في دارك</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <title>Lisseur Pro - شعر ناعم في دقائق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* الألوان والستايل */
         :root {
-            --accent-color: #d4a373; /* لون ذهبي ناعم */
-            --pink-bg: #fff5f6; /* خلفية وردية خفيفة */
-            --dark-text: #333;
-            --cta-color: #e63946; /* لون زر الطلب واضح */
+            --main-pink: #fce4ec;
+            --dark-pink: #f06292;
+            --gold: #d4af37;
+            --black: #212121;
         }
 
         body {
@@ -18,180 +18,111 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
-            color: var(--dark-text);
+            color: var(--black);
+            overflow-x: hidden;
         }
 
-        .header-promo {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
+        /* تحذير: هاد الكود غيغطي الصفحة كاملة باش تجي طويلة */
+        section { padding: 60px 20px; text-align: center; }
 
-        .container {
-            width: 90%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .promo-bar { background: var(--black); color: #fff; padding: 10px; font-weight: bold; font-size: 14px; position: sticky; top: 0; z-index: 1000; }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 30px 0;
-        }
+        .hero-img { width: 100%; max-width: 500px; border-radius: 20px; margin-top: 20px; }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #8c5e58;
-        }
+        h1 { color: var(--dark-pink); font-size: 1.8rem; margin-top: 10px; }
 
-        .main-img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
+        /* الأقسام الزايدة باش تطوال الصفحة */
+        .how-to-use { background: var(--main-pink); }
+        .steps { display: flex; flex-direction: column; gap: 20px; text-align: right; max-width: 500px; margin: 0 auto; }
+        .step { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        /* Price & Badge */
-        .price-section {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
+        .guarantee { border: 2px solid var(--gold); margin: 20px; padding: 20px; border-radius: 15px; }
 
-        .new-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--cta-color);
-        }
+        .price-tag { font-size: 30px; color: #e91e63; font-weight: bold; margin: 20px 0; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 20px; }
 
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-        }
-
-        /* Features List */
-        .features {
-            background: var(--pink-bg);
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .feature-item:before {
-            content: '✦';
-            margin-left: 10px;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Reviews Section (Social Proof) */
-        .reviews {
-            margin-top: 40px;
-        }
-
-        .review-card {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
-        }
-
-        .stars { color: #f1c40f; margin-bottom: 5px; }
-
-        /* Floating CTA Button */
-        .cta-container {
+        /* زر الطلب العائم */
+        .sticky-footer {
             position: fixed;
             bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.9);
+            width: 100%;
+            background: #fff;
             padding: 15px;
             box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            z-index: 100;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            z-index: 10000;
         }
 
-        .btn-order {
-            background: var(--cta-color);
-            color: #fff;
+        .cta-btn {
+            background: #4caf50; /* لون أخضر للواتساب */
+            color: white;
+            padding: 15px 50px;
             text-decoration: none;
-            display: block;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.3rem;
+            border-radius: 50px;
             font-weight: bold;
-            animation: shake 3s infinite;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            5% { transform: translateX(-5px); }
-            10% { transform: translateX(5px); }
-            15% { transform: translateX(0); }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        /* Spacer for fixed button */
-        .spacer { height: 100px; }
+        .spacer { height: 100px; } /* فراغ باش ما يتغطاش المحتوى بالزر */
     </style>
 </head>
 <body>
 
-    <div class="header-promo">
-        شحن مجاني لجميع المدن المغربية 📦 الدفع عند الاستلام
-    </div>
+    <div class="promo-bar">توصيل مجاني لجميع المدن + الدفع عند الاستلام 🚚</div>
 
-    <div class="container">
-        <section class="hero">
-            <h1>احصلي على شعر ناعم وجذاب في دقائق ✨</h1>
-            <p>المكواة الاحترافية المفضلة لدى صالونات التجميل الآن بين يديك</p>
-            <img src="https://via.placeholder.com/600x600" class="main-img" alt="Product Image">
-        </section>
-
-        <div class="price-section">
-            <span class="new-price">349 درهم</span>
-            <span class="old-price">599 درهم</span>
+    <section>
+        <h1>صالون التجميل في منزلك مع المشط الاحترافي ✨</h1>
+        <p>وفري وقتك وفلوسك وحصلي على نتيجة مبهرة في 5 دقائق فقط</p>
+        <img src="https://via.placeholder.com/500x500" class="hero-img" alt="Product">
+        
+        <div class="price-tag">
+            <span class="old-price">499 درهم</span> <br>
+            249 درهم فقط!
         </div>
+    </section>
 
-        <section class="features">
-            <div class="feature-item">تقنية الأيونات لحماية الشعر من التلف</div>
-            <div class="feature-item">تسخين سريع في أقل من 30 ثانية</div>
-            <div class="feature-item">تصميم مريح وسهل الاستخدام (2 في 1)</div>
-            <div class="feature-item">مناسب لجميع أنواع الشعر (الخشن والناعم)</div>
-        </section>
-
-        <section class="reviews">
-            <h3>آراء زبوناتنا الوفيات ⭐</h3>
-            <div class="review-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"بصراحة واعر بزااف، كيرطب الشعر من أول دوزة ومكايحرقش. شكراً!"</p>
-                <strong>- هدى، الدار البيضاء</strong>
-            </div>
-            <div class="review-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"وصلني فـ 24 ساعة، التغليف أنيق والمنتج جودته عالية."</p>
-                <strong>- ليلى، طنجة</strong>
-            </div>
-        </section>
-
-        <div class="spacer"></div>
-    </div>
-
-    <div class="cta-container">
-        <div class="container">
-            <a href="https://wa.me/212691444558" class="btn-order">اطلبي الآن عبر الواتساب</a>
-            <p style="font-size: 0.8rem; margin: 5px 0 0;">(العرض سينتهي قريباً!)</p>
+    <section style="background: #fafafa;">
+        <h2>علاش آلاف النساء كيختارو هاد المنتج؟ 🤔</h2>
+        <div class="steps">
+            <div class="step">✅ <strong>حماية فائقة:</strong> تقنية السيراميك اللي كتحمي شعرك من الحرق.</div>
+            <div class="step">✅ <strong>سرعة خيالية:</strong> كيسخن في 30 ثانية فقط.</div>
+            <div class="step">✅ <strong>نتيجة دايما:</strong> كيبقى شعرك رطب وحريري النهار كامل.</div>
         </div>
+    </section>
+
+    <section class="how-to-use">
+        <h2>طريقة الاستعمال بسيطة بزااف 💆‍♀️</h2>
+        <p>1. نشفي شعرك مزيان.</p>
+        <p>2. اختاري الحرارة اللي كتناسبك.</p>
+        <p>3. دوزي المشط بكل سهولة وشوفي الفرق!</p>
+    </section>
+
+    <section class="guarantee">
+        <img src="https://cdn-icons-png.flaticon.com/512/9333/9333991.png" width="60" alt="Icon">
+        <h3>ضمان لمدة 12 شهر</h3>
+        <p>حنا واثقين في جودة المنتجات ديالنا، إلا كان فيه أي مشكل كنعوضوك!</p>
+    </section>
+
+    <section>
+        <h2>شنو قالو البنات اللي جربوه؟ ⭐⭐⭐⭐⭐</h2>
+        <p>"والله حتى هناني من السيشوار، خفيف وسهل في الاستعمال." - <strong>خديجة، الرباط</strong></p>
+        <hr>
+        <p>"وصلني دغيا، والتعامل ديالكم راقي بزاف. شكراً على المصداقية." - <strong>سلمى، أكادير</strong></p>
+    </section>
+
+    <div class="spacer"></div>
+
+    <div class="sticky-footer">
+        <a href="https://wa.me/2126XXXXXXXX" class="cta-btn">طلب عبر الواتساب الآن</a>
     </div>
 
 </body>
