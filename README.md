@@ -11,6 +11,9 @@
             --black: #1a1a1a;
             --green-wa: #25D366;
         }
+        h1 {
+    display: none !important;
+}
 
         * { box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; margin: 0; padding: 0; background-color: #fff; text-align: center; line-height: 1.6; color: #333; }
