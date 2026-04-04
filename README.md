@@ -2,227 +2,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VELORIA BEAUTY - العرض المتكامل</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>VELORIA BEAUTY - Amazon Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-pink: #fff5f6; --dark-pink: #f06292; --black: #1a1a1a; --green-wa: #25D366; }
-        h1 { display: none !important; }
-        * { box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; margin: 0; padding: 0; background-color: #fff; text-align: center; line-height: 1.6; color: #333; }
+        :root { --amazon-orange: #ff9900; --amazon-blue: #232f3e; --text-color: #111; --light-gray: #565959; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; padding: 0; background: #fff; color: var(--text-color); }
+        
+        /* Header & Brand */
+        .brand-header { padding: 15px; border-bottom: 1px solid #ddd; text-align: center; }
+        .brand-name { font-size: 24px; font-weight: bold; color: #f06292; letter-spacing: 1px; }
 
-        .brand-header { padding: 20px 0; background-color: #fff; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid #f8f8f8; }
-        .brand-logo { width: 75px; height: auto; margin-bottom: 8px; border-radius: 50%; }
-        .brand-name { font-size: 22px; font-weight: bold; color: var(--dark-pink); letter-spacing: 2px; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; display: grid; grid-template-columns: 1fr 350px; gap: 30px; }
 
-        .promo-bar { background: var(--black); color: #fff; padding: 12px; font-weight: bold; width: 100%; font-size: 14px; }
-        .timer-container { background: #fff3f3; padding: 15px; border-bottom: 2px solid #ffcdd2; }
-        #timer { font-size: 28px; font-weight: bold; color: #d32f2f; }
-        .exclusive-text { color: #d32f2f; font-weight: bold; margin-top: 5px; font-size: 14px; }
+        /* Left Side: Images & Info */
+        .main-product { display: flex; flex-direction: column; }
+        .image-grid-large { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .large-img { width: 100%; border-radius: 8px; cursor: zoom-in; border: 1px solid #eee; }
+        
+        .thumbnails-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+        .thumb { width: 60px; height: 60px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; object-fit: cover; }
+        .thumb:hover { border-color: var(--amazon-orange); box-shadow: 0 0 5px rgba(255,153,0,0.5); }
 
-        .hero { padding: 20px; }
-        .hero-img { width: 95%; max-width: 480px; border-radius: 15px; margin: 0 auto 20px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: pointer; }
+        .product-info h2 { font-size: 22px; margin-bottom: 10px; }
+        .price-section { border-top: 1px solid #eee; padding-top: 15px; }
+        .old-price { text-decoration: line-through; color: var(--light-gray); font-size: 18px; }
+        .current-price { color: #B12704; font-size: 28px; font-weight: bold; }
+        .discount-tag { background: #CC0C39; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px; margin-right: 10px; }
 
-        .price-box { margin: 15px 0; }
-        .new-price { font-size: 32px; color: #e91e63; font-weight: bold; }
-        .badge { background: #ff5252; color: #fff; padding: 6px 15px; border-radius: 5px; font-size: 14px; display: inline-block; margin-top: 5px; font-weight: bold; }
+        /* Features List */
+        .specs { margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 10px; }
+        .specs h3 { font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .specs ul { list-style: none; padding: 0; }
+        .specs li { margin-bottom: 10px; padding-right: 25px; position: relative; }
+        .specs li::before { content: "✓"; position: absolute; right: 0; color: #007600; font-weight: bold; }
 
-        .lighting-grid { display: flex; gap: 10px; justify-content: center; padding: 0 10px; margin-top: 25px; }
-        .light-item { flex: 1; min-width: 80px; max-width: 150px; cursor: pointer; }
-        .light-item img { width: 100%; border-radius: 12px; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .light-label { font-size: 11px; font-weight: bold; margin-top: 5px; color: var(--dark-pink); }
+        /* Right Side: Rating Sidebar */
+        .rating-sidebar { border: 1px solid #ddd; padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 20px; }
+        .rating-summary h3 { margin: 0; font-size: 20px; }
+        .stars-big { color: var(--amazon-orange); font-size: 24px; }
+        .bar-container { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+        .bar-bg { background: #f0f2f2; height: 20px; flex: 1; border-radius: 4px; border: 1px solid #ccc; overflow: hidden; }
+        .bar-fill { background: var(--amazon-orange); height: 100%; }
 
-        .feature-details { padding: 25px 15px; background: #fffafb; margin: 20px 20px; border-radius: 15px; border: 1px dashed var(--dark-pink); }
-        .feature-details h4 { color: var(--dark-pink); margin-top: 0; }
-        .feature-details ul { text-align: right; display: inline-block; padding: 0; margin: 0; list-style: none; }
-        .feature-details li { margin-bottom: 8px; font-size: 14px; }
-        .feature-details li::before { content: "✓ "; color: var(--dark-pink); font-weight: bold; }
+        /* Reviews Feed */
+        .reviews-feed { margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px; }
+        .review-item { border-bottom: 1px solid #eee; padding: 25px 0; text-align: right; }
+        .user-profile { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .user-avatar { width: 34px; height: 34px; border-radius: 50%; }
+        .user-name { font-weight: bold; font-size: 14px; }
+        .review-text { font-size: 15px; color: #333; margin-top: 10px; line-height: 1.8; }
+        .review-img { width: 120px; height: 120px; border-radius: 8px; object-fit: cover; margin-top: 10px; border: 1px solid #eee; }
 
-        .modal { display: none; position: fixed; z-index: 20000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); justify-content: center; align-items: center; cursor: pointer; }
-        .modal-content { max-width: 95%; max-height: 85%; border-radius: 10px; cursor: default; }
+        .add-review-btn { background: #f0f2f2; border: 1px solid #d5d9d9; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; margin-top: 20px; }
 
-        .info-card { padding: 40px 15px; border-bottom: 1px solid #f0f0f0; }
-        .info-card h3 { color: var(--dark-pink); margin-bottom: 15px; }
+        /* Footer */
+        .shipping-section { margin-top: 40px; text-align: center; background: #f3f3f3; padding: 40px; }
+        .slogan { font-size: 20px; font-weight: bold; color: var(--amazon-blue); margin-top: 20px; }
 
-        .faq-section { padding: 40px 15px; background: #fff; text-align: right; }
-        .faq-title { color: var(--dark-pink); margin-bottom: 25px; text-align: center; }
-        .faq-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .faq-question { font-weight: bold; color: #333; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-question::after { content: '+'; font-size: 20px; color: var(--dark-pink); }
-        .faq-answer { display: none; padding-top: 10px; color: #666; font-size: 14px; }
-        .extra-content { display: none; }
-
-        .reviews-container { background: var(--main-pink); padding: 40px 15px; }
-        .review-card { background: #fff; padding: 15px; border-radius: 15px; margin: 12px auto; width: 100%; max-width: 500px; text-align: right; display: flex; gap: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.04); }
-        .profile-img { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--main-pink); }
-        .stars { color: #ffc107; font-size: 12px; }
-
-        .btn-outline { background: #fff; border: 1.5px solid var(--dark-pink); color: var(--dark-pink); padding: 10px 25px; border-radius: 30px; cursor: pointer; margin: 20px 0; font-weight: bold; }
-        .sticky-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; padding: 15px 0; z-index: 10000; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); display: flex; justify-content: center; }
-        .cta-btn { background: var(--green-wa); color: #fff; width: 88%; max-width: 380px; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.4rem; animation: pulse 2.5s infinite; text-align: center; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.04); } 100% { transform: scale(1); } }
-        .spacer { height: 120px; }
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .rating-sidebar { position: static; }
+        }
     </style>
 </head>
 <body>
 
     <header class="brand-header">
-        <img src="logo.png" alt="Veloria Logo" class="brand-logo">
         <span class="brand-name">VELORIA BEAUTY</span>
     </header>
 
-    <div class="promo-bar">🚚 توصيل مجاني + الدفع عند الاستلام 🤝</div>
+    <div class="container">
+        <main class="main-product">
+            <div class="image-grid-large">
+                <img src="1.jpg" class="large-img" onclick="openZoom(this.src)">
+                <img src="2.jpg" class="large-img" onclick="openZoom(this.src)">
+                <img src="3.jpg" class="large-img" onclick="openZoom(this.src)">
+                <img src="4.jpg" class="large-img" onclick="openZoom(this.src)">
+                <img src="5.jpg" class="large-img" onclick="openZoom(this.src)">
+                <img src="6.jpg" class="large-img" onclick="openZoom(this.src)">
+            </div>
 
-    <div class="timer-container">
-        <p style="margin:0; font-weight: bold;">مدة الخصم تنتهي في:</p>
-        <div id="timer">--:--:--</div>
-        <div class="exclusive-text">خصم حصري على المجموعة كاملة</div>
+            <div class="thumbnails-container">
+                <img src="t1.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t2.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t3.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t4.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t5.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t6.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t7.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t8.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t9.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t10.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t11.jpg" class="thumb" onclick="openZoom(this.src)">
+                <img src="t12.jpg" class="thumb" onclick="openZoom(this.src)">
+            </div>
+
+            <div class="product-info">
+                <h2>مجموعة التجميل المتكاملة: حقيبة بمرآة LED ذكية + علبة مجوهرات فاخرة</h2>
+                <div class="price-section">
+                    <span class="discount-tag">خصم 33%</span>
+                    <span class="old-price">479.00 درهم</span>
+                    <div class="current-price">319.00 درهم</div>
+                    <p style="color:#007600; font-weight:bold;">متوفر في المخزون حالياً.</p>
+                </div>
+
+                <div class="specs">
+                    <h3>تفاصيل المنتج الفنية:</h3>
+                    <ul>
+                        <li><strong>المادة:</strong> جلد PU فاخر عالي الجودة ومقاوم تماماً للماء والخدوش.</li>
+                        <li><strong>نظام الإضاءة:</strong> مرآة LED بـ 3 درجات حرارة (طبيعي، دافئ، بارد) قابلة للشحن.</li>
+                        <li><strong>التنظيم:</strong> فواصل داخلية قابلة للتعديل والتحريك حسب حجم الماكياج.</li>
+                        <li><strong>علبة المجوهرات:</strong> تصميم مدمج ببطانة مخملية لحماية الخواتم والسلاسل.</li>
+                        <li><strong>الاستخدام:</strong> مثالية للسفر، المناسبات، والاستخدام اليومي المنظم.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <aside class="rating-sidebar">
+            <div class="rating-summary">
+                <h3>آراء الزبناء</h3>
+                <div class="stars-big">⭐⭐⭐⭐⭐</div>
+                <p>4.8 من أصل 5 نجوم</p>
+                
+                <div class="bar-container">
+                    <span>5 نجوم</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div>
+                    <span>88%</span>
+                </div>
+                <div class="bar-container">
+                    <span>4 نجوم</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 7%;"></div></div>
+                    <span>7%</span>
+                </div>
+                <div class="bar-container">
+                    <span>3 نجوم</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 3%;"></div></div>
+                    <span>3%</span>
+                </div>
+                <div class="bar-container">
+                    <span>2 نجوم</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 1%;"></div></div>
+                    <span>1%</span>
+                </div>
+                <div class="bar-container">
+                    <span>نجمة</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 1%;"></div></div>
+                    <span>1%</span>
+                </div>
+            </div>
+            <button class="add-review-btn">إضافة تقييمك أو صورتك</button>
+        </aside>
     </div>
 
-    <section class="hero">
-        <img src="1.jpg" class="hero-img" alt="حقيبة الماكياج" onclick="openModal(this.src)">
-        <div class="price-box">
-            <span style="text-decoration: line-through; color: #999; font-size: 20px;">479 درهم</span><br>
-            <span class="new-price">319 درهم فقط</span><br>
-            <span class="badge">أطلبي الآن واستفيدي من عرض محدود</span>
-        </div>
-        <p style="font-weight: bold; color: #444; margin-top: 10px;">✨ حقيبة واسعة بـ "فواصل ذكية" تقدري تشكلي مساحتها وتصغريها كيفما بغيتي على حساب ماكياجك!</p>
+    <section class="container">
+        <div class="reviews-feed">
+            <h2>أهم المراجعات من المغرب</h2>
+
+            <div class="review-item">
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Nabila" class="user-avatar">
+                    <span class="user-name">نبيلة السكوري</span>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐ <span style="font-weight:bold; margin-right:10px;">أحسن حاجة شريت هاد العام!</span></div>
+                <div class="review-text">
+                    بصراحة كنت مترددة في الأول واش نطلبها ولكن فاش وصلاتني تيقنت بلي السلعة طوب. الحقيبة الجلد ديالها رطب وكيبان غالي، والمرايا الضوء ديالها مجهد بزاف كينفعني فاش كنكون كنقاد الماكياج بالليل أو في بلاصة ناقصة إضاءة. اللي عجبني بزاف هو دوك الفواصل اللي لداخل، حيدتهم وقاديتهم على حساب القياس ديال Palette ديالي وديال العكر، دابا كولشي ولا منظم وما بقيت كنقلب على حتى حاجة. أما العلبة ديال المجوهرات فهي لمسة واعرة، وليت كندير فيها السلاسل اللي كنخاف عليهم يتخبلوا ليا وسط الصاك. الجودة صراحة هربانة والتوصيل كان سريع، وصلاتني في 24 ساعة للرباط. شكراً فيلوريا على هاد المصداقية!
+                </div>
+                <img src="r1.jpg" class="review-img">
+            </div>
+
+            <div class="review-item">
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Siham" class="user-avatar">
+                    <span class="user-name">سهام بناني</span>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐ <span style="font-weight:bold; margin-right:10px;">عملية جداً للسفر</span></div>
+                <div class="review-text">
+                    المرآة ذكية بزاف حيت كتشحن بـ USB وما كنحتاجش خيوط. الصاك كيهز بزاف ديال السلعة والعلبة د الخواتم فكرة رائعة. جودة الجلد ممتازة ومقاوم للماء كيف مكتوب.
+                </div>
+                <img src="r2.jpg" class="review-img">
+            </div>
+
+            <div class="review-item">
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Zineb" class="user-avatar">
+                    <span class="user-name">زينب العلوية</span>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="review-text">واعرة بزااااف 😍 جودة هربانة!</div>
+            </div>
+
+            <div class="review-item">
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hanan" class="user-avatar">
+                    <span class="user-name">حنان المرابط</span>
+                </div>
+                <div class="stars">⭐⭐⭐⭐⭐ <span style="font-weight:bold; margin-right:10px;">العلبة د المجوهرات كلاس</span></div>
+                <div class="review-text">
+                    عجباتني العلبة بزاف، اللون الوردي غزال ومن الداخل رطبة كتحمي الذهب من الخدوش. الحقيبة حتى هي فالمستوى.
+                </div>
+                <img src="r3.jpg" class="review-img">
+            </div>
+
+            </div>
     </section>
 
-    <div class="info-card">
-        <h3>مرآة ذكية احترافية 💡</h3>
-        <div class="lighting-grid">
-            <div class="light-item" onclick="openModal('light1.jpg')"><img src="light1.jpg"><div class="light-label">أبيض طبيعي</div></div>
-            <div class="light-item" onclick="openModal('light2.jpg')"><img src="light2.jpg"><div class="light-label">أصفر دافئ</div></div>
-            <div class="light-item" onclick="openModal('light3.jpg')"><img src="light3.jpg"><div class="light-label">أبيض ناصع</div></div>
-        </div>
-
-        <div class="feature-details">
-            <h4>تفاصيل ومميزات المرآة:</h4>
-            <ul>
-                <li><strong>إضاءة LED ذكية:</strong> 3 مستويات من الإضاءة كتحكمي فيها باللمس.</li>
-                <li><strong>قابلة للفصل والشحن:</strong> تقدري تحيديها وتخدمي بها بوحدها، وكتشارجا بـ USB.</li>
-                <li><strong>بطارية ليتيو قوية:</strong> كتدوم مدة طويلة بلا ما تحتاجي تشارجيها كل نهار.</li>
-                <li><strong>وضوح عالي:</strong> زجاج نقي كيبين تفاصيل الماكياج بكل دقة.</li>
-            </ul>
-        </div>
+    <div class="shipping-section">
+        <img src="delivery.jpg" class="large-img" style="max-width: 400px; margin: auto;">
+        <div class="slogan">VELORIA BEAUTY: الجودة التي تستحقينها، بضمانتنا الشخصية.</div>
+        <p>توصيل مجاني لجميع المدن - الدفع عند الاستلام</p>
     </div>
 
-    <div id="myModal" class="modal" onclick="closeModal()">
-        <img class="modal-content" id="img01" onclick="event.stopPropagation()">
+    <div id="zoomModal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;" onclick="this.style.display='none'">
+        <img id="zoomImg" style="max-width:90%; max-height:90%; border-radius:10px;">
     </div>
-
-    <div class="info-card">
-        <h3>نظمي مجوهراتك بكل أناقة 💍</h3>
-        <img src="3.jpg" class="hero-img" alt="علبة المجوهرات" onclick="openModal(this.src)">
-        
-        <div class="feature-details">
-            <h4>مميزات علبة المجوهرات:</h4>
-            <ul>
-                <li><strong>تنظيم ذكي:</strong> مقسمة للخواتم، السلاسل، والحلقات باش ما يتلفوش ليك.</li>
-                <li><strong>حجم مثالي:</strong> كتجي وسط الحقيبة وما كتاخدش مساحة كبيرة.</li>
-                <li><strong>حماية فائقة:</strong> مغلفة بمادة رطبة من الداخل كتحمي المجوهرات من الخدوش.</li>
-                <li><strong>تصميم أنيق:</strong> تقدري تهزيها معاك بوحدها فالمناسبات أو السفر.</li>
-            </ul>
-        </div>
-    </div>
-
-    <section class="faq-section">
-        <h2 class="faq-title">أسئلة كيسولوها البنات 🤔</h2>
-        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش بصح التوصيل فابور؟</div><div class="faq-answer">نعم أختي، التوصيل مجاني لجميع المدن المغربية والدفع حتى كتوصلك الأمانة.</div></div>
-        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">شحال كيبقى شحن المرآة؟</div><div class="faq-answer">البطارية قوية بزاف، تقدري تخدمي بها حتى لـ 10 أيام بشحنة وحدة.</div></div>
-        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">إلى وصلاتني ولقيت فيها شي مشكل؟</div><div class="faq-answer">عندنا ضمان الجودة! إلى كان أي عيب، كنبدلوها ليك فوراً أو كنرجعو ليك فلوسك.</div></div>
-        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش الحقيبة والعلبة كيجيو مجموعين؟</div><div class="faq-answer">نعم، العرض كيشمل الحقيبة الذكية + علبة المجوهرات + كابل الشحن بـ 319 درهم فقط.</div></div>
-        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش الحقيبة جلد؟</div><div class="faq-answer">نعم، المادة الخارجية من الجلد الاصطناعي الفاخر، ساهل في التنظيف وكيحمي المحتويات.</div></div>
-
-        <div class="extra-content" id="extraFaq">
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">شحال كياخد التوصيل من وقت؟</div><div class="faq-answer">بين 24 و 48 ساعة كحد أقصى كيكون الطلب عندك.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش نقدر نغسل الحقيبة؟</div><div class="faq-answer">يفضل تمسحيها غير بقطعة قماش مبللة باش تحافظي على الجلد والدوائر الكهربائية.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش المرايا فيها ألوان بزاف؟</div><div class="faq-answer">فيها 3 ديال الدرجات (أبيض طبيعي، أصفر دافئ، وأبيض ناصع).</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">واش العلبة د المجوهرات كتهز بزاف؟</div><div class="faq-answer">نعم، مقسمة بذكاء باش تهز ليك كاع السلاسل والخواتم اللي كتحتاجي.</div></div>
-            <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">كيفاش نطلب العرض؟</div><div class="faq-answer">كليكي على زر الواتساب التحت، صيفطي المعلومات ديالك وحنا نتواصلو معك.</div></div>
-        </div>
-        <button class="btn-outline" id="btnFaq" onclick="toggleMore('extraFaq', 'btnFaq', 'أسئلة')">إظهار المزيد من الأسئلة</button>
-    </section>
-
-    <section class="reviews-container">
-        <h2>آراء البنات اللي جربوا المجموعة ⭐</h2>
-        <div class="review-card">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Nora&eyebrows=flatNatural&hair=longCurvy&skinColor=edb98a" class="profile-img" alt="نهيلة">
-            <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">نهيلة - الرباط</span><p style="font-size:14px; margin:5px 0;">المرايا واعرة والضوء فيها مجهد كيعاون فالمكياج. العلبة د المجوهرات نفعاتني بزاف في التنظيم!</p></div>
-        </div>
-        <div class="review-card">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sara&eyebrows=defaultNatural&hair=bigHair&skinColor=f8d25c" class="profile-img" alt="إلهام">
-            <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">إلهام - كازا</span><p style="font-size:14px; margin:5px 0;">جودة طوب! الحقيبة كتهز بزاف والعلبة د الخواتم كيجيو فيها مستفين. شكراً فيلوريا.</p></div>
-        </div>
-        <div class="review-card">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mariam&eyebrows=flatNatural&hair=straight02&skinColor=edb98a" class="profile-img" alt="سلمى">
-            <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">سلمى - فاس</span><p style="font-size:14px; margin:5px 0;">أحسن باك خديت هاد العام، المرايا كتحيد وهادشي نفعني بزاف فالسفر. العلبة الصغيرة كلاس بزااف.</p></div>
-        </div>
-
-        <div class="extra-content" id="extraReviews">
-            <div class="review-card">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Fatima&eyebrows=defaultNatural&hair=longCurvy&skinColor=f8d25c" class="profile-img">
-                <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">إيمان - طنجة</span><p style="font-size:14px; margin:5px 0;">السلعة واصلة كيفما فالصور تماماً. المرايا كتشارجا دغيا وكتصبر، والحقيبة الجلد ديالها رطب وزوين.</p></div>
-            </div>
-            <div class="review-card">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hafsa&eyebrows=flatNatural&hair=bigHair&skinColor=edb98a" class="profile-img">
-                <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">مريم - مراكش</span><p style="font-size:14px; margin:5px 0;">بصراحة صدماتني الجودة! الحقيبة متينة وكتحمي الماكياج والمرايا فيها إضاءة بروفيسيونال.</p></div>
-            </div>
-            <div class="review-card">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Zineb&eyebrows=defaultNatural&hair=straight02&skinColor=f8d25c" class="profile-img">
-                <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">حنان - أكادير</span><p style="font-size:14px; margin:5px 0;">تعامل راقي وتوصيل سريع. الحقيبة والعلبة جاو مجموعين ومقادين، عجبوني بزاف كهدية.</p></div>
-            </div>
-            <div class="review-card">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kawtar&eyebrows=flatNatural&hair=longCurvy&skinColor=edb98a" class="profile-img">
-                <div style="flex:1;"><div class="stars">⭐⭐⭐⭐⭐</div><span style="font-weight:bold">كوثر - القنيطرة</span><p style="font-size:14px; margin:5px 0;">المرآة ذكية بزاف، نفعاتني حيت كنقدر نحيدها ونخدم بها برا الحقيبة. شكراً ليكم.</p></div>
-            </div>
-        </div>
-        <button class="btn-outline" id="btnReviews" onclick="toggleMore('extraReviews', 'btnReviews', 'الآراء')">إظهار المزيد من الآراء</button>
-    </section>
-
-    <section class="final-proof">
-        <h2>توصيل سريع ومضمون 🚀</h2>
-        <img src="4.jpg" class="hero-img" alt="توصيل سريع" onclick="openModal(this.src)">
-        <p>فيلوريا تضمن لك جودة عالية وتوصيل سريع لجميع مدن المغرب.</p>
-    </section>
-
-    <div class="spacer"></div>
-    <div class="sticky-footer"><a href="https://wa.me/212691444558" class="cta-btn">اطلبي الآن عبر الواتساب</a></div>
 
     <script>
-        function openModal(src) { document.getElementById("myModal").style.display = "flex"; document.getElementById("img01").src = src; }
-        function closeModal() { document.getElementById("myModal").style.display = "none"; }
-        function toggleFaq(element) { const answer = element.nextElementSibling; answer.style.display = (answer.style.display === "block") ? "none" : "block"; }
-        
-        function toggleMore(id, btnId, text) {
-            var content = document.getElementById(id);
-            var btn = document.getElementById(btnId);
-            if (content.style.display === "block") {
-                content.style.display = "none";
-                btn.innerHTML = "إظهار المزيد من " + text;
-            } else {
-                content.style.display = "block";
-                btn.innerHTML = "إغلاق";
-            }
+        function openZoom(src) {
+            document.getElementById('zoomModal').style.display = 'flex';
+            document.getElementById('zoomImg').src = src;
         }
-
-        function startPersistentTimer() {
-            var duration = 12 * 60 * 60;
-            var now = Math.floor(Date.now() / 1000);
-            var endTime = localStorage.getItem('v_timer_end');
-            if (!endTime || now > endTime) { endTime = now + duration; localStorage.setItem('v_timer_end', endTime); }
-            var display = document.querySelector('#timer');
-            setInterval(function() {
-                var currentNow = Math.floor(Date.now() / 1000);
-                var distance = endTime - currentNow;
-                if (distance < 0) { endTime = currentNow + duration; localStorage.setItem('v_timer_end', endTime); distance = duration; }
-                var h = Math.floor(distance / 3600);
-                var m = Math.floor((distance % 3600) / 60);
-                var s = Math.floor(distance % 60);
-                display.textContent = (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
-            }, 1000);
-        }
-        window.onload = startPersistentTimer;
     </script>
+
 </body>
 </html>
