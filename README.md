@@ -1,15 +1,11 @@
-
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velooria Fragrance | High-End Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Velooria Fragrance | The Core 4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #D4AF37; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* سيستيم الهبوط الحر - كل عطر كياخد الشاشة كاملة */
         html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
         body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; }
 
@@ -20,134 +16,145 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            scroll-snap-align: start; /* كايجر الكليان للقسم نيشان */
+            scroll-snap-align: start;
             overflow: hidden;
         }
 
-        /* الخلفية الميديا (فيديو أو صورة لكل قسم) */
-        .bg-container {
+        /* حاوية الخلفية - الفيديو هو اللي كايعطي اللون */
+        .bg-wrapper {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
         }
-        .bg-container video, .bg-container img {
+        
+        .bg-wrapper video {
             width: 100%; height: 100%; object-fit: cover;
-            filter: brightness(0.5); /* باش تبان الكتيبة واضحة */
+        }
+
+        /* هاد الطبقة كاتخلي ألوان الفيديو تبان ولكن كاتحمي وضوح النص */
+        .bg-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* شفافة بزاف باش تخلي لون المنتج يطغى */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 2;
         }
 
         .content {
             position: relative;
             z-index: 10;
             text-align: center;
-            max-width: 800px;
-            padding: 20px;
+            width: 90%;
+            max-width: 600px;
         }
 
-        h2 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 5px; }
-        .tagline { font-size: 1.2rem; font-weight: 200; margin-bottom: 40px; letter-spacing: 2px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: #fff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 4px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .tagline { font-size: 1.1rem; font-weight: 300; margin-bottom: 30px; letter-spacing: 1px; color: rgba(255,255,255,0.9); }
 
-        /* فورم الحجز الراقية */
+        /* فورم الحجز الزجاجية - كاتشف الألوان اللي وراها */
         .glass-form {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 5px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        .full-width { grid-column: span 2; }
-        
+
         input {
-            background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.3);
-            color: #fff; padding: 15px; outline: none; transition: 0.3s; font-family: 'Montserrat';
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 12px;
+            outline: none;
+            font-family: 'Montserrat';
+            transition: 0.3s;
         }
-        input:focus { border-bottom-color: var(--gold); }
-        
+        input:focus { border-bottom-color: #D4AF37; background: rgba(0,0,0,0.4); }
+
         .order-btn {
-            grid-column: span 2;
-            background: var(--gold); color: #000; border: none;
-            padding: 20px; font-weight: 600; cursor: pointer;
+            background: #fff; color: #000; border: none;
+            padding: 18px; font-weight: 600; cursor: pointer;
             text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
+            margin-top: 10px;
         }
-        .order-btn:hover { background: #fff; letter-spacing: 4px; }
+        .order-btn:hover { background: #D4AF37; color: #fff; letter-spacing: 4px; }
 
-        /* لوغو فيكسد */
-        .main-logo { position: fixed; top: 30px; left: 50%; transform: translateX(-50%); z-index: 100; font-family: 'Playfair Display'; font-size: 1.5rem; letter-spacing: 10px; color: var(--gold); }
-
-        @media (max-width: 768px) {
-            h2 { font-size: 2.5rem; }
-            .glass-form { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
-            .order-btn { grid-column: span 1; }
-        }
+        .logo-fixed { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); z-index: 100; font-family: 'Playfair Display'; font-size: 1.4rem; letter-spacing: 8px; color: #fff; }
     </style>
 </head>
 <body>
 
-    <div class="main-logo">VELOORIA</div>
+    <div class="logo-fixed">VELOORIA</div>
 
-    <section class="section" id="sauvage">
-        <div class="bg-container">
-            <video autoplay muted loop playsinline><source src="sauvage_video.mp4" type="video/mp4"></video>
+    <section class="section">
+        <div class="bg-wrapper">
+            <video autoplay muted loop playsinline><source src="assets/sauvage.mp4" type="video/mp4"></video>
+            <div class="bg-overlay"></div>
         </div>
         <div class="content">
             <h2>Sauvage Elixir</h2>
-            <p class="tagline">التركيز الأقصى.. هيبة لا تنتهي</p>
+            <p class="tagline">قوة الغسق.. في عبوة 10ml</p>
             <form class="glass-form">
                 <input type="text" placeholder="الاسم الكامل" required>
                 <input type="tel" placeholder="رقم الهاتف" required>
-                <input type="text" placeholder="العنوان والمدينة" class="full-width" required>
-                <button type="submit" class="order-btn">احجز الآن - 319 DH</button>
+                <input type="text" placeholder="المدينة" required>
+                <button type="submit" class="order-btn">حجز الآن | 319 DH</button>
             </form>
         </div>
     </section>
 
-    <section class="section" id="swy">
-        <div class="bg-container">
-            <video autoplay muted loop playsinline><source src="armani_video.mp4" type="video/mp4"></video>
+    <section class="section">
+        <div class="bg-wrapper">
+            <video autoplay muted loop playsinline><source src="assets/armani.mp4" type="video/mp4"></video>
+            <div class="bg-overlay"></div>
         </div>
         <div class="content">
             <h2>Intensely You</h2>
-            <p class="tagline">دفء العاطفة وجاذبية العنبر</p>
+            <p class="tagline">دفء العاطفة.. في عبوة 10ml</p>
             <form class="glass-form">
                 <input type="text" placeholder="الاسم الكامل" required>
                 <input type="tel" placeholder="رقم الهاتف" required>
-                <input type="text" placeholder="العنوان والمدينة" class="full-width" required>
-                <button type="submit" class="order-btn">احجز الآن - 289 DH</button>
+                <input type="text" placeholder="المدينة" required>
+                <button type="submit" class="order-btn">حجز الآن | 289 DH</button>
             </form>
         </div>
     </section>
 
-    <section class="section" id="libre">
-        <div class="bg-container">
-            <video autoplay muted loop playsinline><source src="libre_video.mp4" type="video/mp4"></video>
+    <section class="section">
+        <div class="bg-wrapper">
+            <video autoplay muted loop playsinline><source src="assets/libre.mp4" type="video/mp4"></video>
+            <div class="bg-overlay"></div>
         </div>
         <div class="content">
             <h2>YSL Libre</h2>
-            <p class="tagline">عطر الحرية والأنوثة الطاغية</p>
+            <p class="tagline">عبير الحرية.. في عبوة 10ml</p>
             <form class="glass-form">
                 <input type="text" placeholder="الاسم الكامل" required>
                 <input type="tel" placeholder="رقم الهاتف" required>
-                <input type="text" placeholder="العنوان والمدينة" class="full-width" required>
-                <button type="submit" class="order-btn">احجز الآن - 299 DH</button>
+                <input type="text" placeholder="المدينة" required>
+                <button type="submit" class="order-btn">حجز الآن | 299 DH</button>
             </form>
         </div>
     </section>
 
-    <section class="section" id="goodgirl">
-        <div class="bg-container">
-            <video autoplay muted loop playsinline><source src="goodgirl_video.mp4" type="video/mp4"></video>
+    <section class="section">
+        <div class="bg-wrapper">
+            <video autoplay muted loop playsinline><source src="assets/goodgirl.mp4" type="video/mp4"></video>
+            <div class="bg-overlay"></div>
         </div>
         <div class="content">
             <h2>Good Girl Glam</h2>
-            <p class="tagline">جرأة الكرز وقوة الورد</p>
+            <p class="tagline">جرأة الكرز.. في عبوة 10ml</p>
             <form class="glass-form">
                 <input type="text" placeholder="الاسم الكامل" required>
                 <input type="tel" placeholder="رقم الهاتف" required>
-                <input type="text" placeholder="العنوان والمدينة" class="full-width" required>
-                <button type="submit" class="order-btn">احجز الآن - 299 DH</button>
+                <input type="text" placeholder="المدينة" required>
+                <button type="submit" class="order-btn">حجز الآن | 299 DH</button>
             </form>
         </div>
     </section>
