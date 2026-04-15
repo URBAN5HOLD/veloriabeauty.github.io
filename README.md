@@ -25,7 +25,7 @@
             letter-spacing: 10px; color: #fff !important; pointer-events: none;
         }
 
-        /* Smart Arrow: Positioned 75% down */
+        /* Smart Navigation Arrow */
         .scroll-trigger { 
             position: fixed; top: 75%; right: 25px; 
             transform: translateY(-50%);
@@ -39,7 +39,10 @@
             transform: rotate(45deg); animation: bounce 2s infinite;
             transition: 0.5s ease;
         }
+        .arrow-up { transform: rotate(-135deg) !important; } /* تدوير السهم للفوق في الأخير */
+
         @keyframes bounce { 0%, 100% { transform: translateY(-5px) rotate(45deg); } 50% { transform: translateY(5px) rotate(45deg); } }
+        @keyframes bounce-up { 0%, 100% { transform: translateY(5px) rotate(-135deg); } 50% { transform: translateY(-5px) rotate(-135deg); } }
 
         .product-section { width: 100%; min-height: 100vh; scroll-snap-align: start; position: relative; padding-bottom: 80px; background-color: #000 !important; }
         
@@ -58,7 +61,6 @@
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
 
-        /* Free Glow Effect */
         .text-glow-free {
             position: relative; z-index: 2; padding: 25px;
             background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important;
@@ -115,18 +117,20 @@
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/image_25f332.png"></div>
+            <div class="img-box"><img src="assets/sauvage-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>THE FRAGRANCE</h3>
-                <p>An extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices.</p>
-                <p><span class="highlight">Gender:</span> Men<br><span class="highlight">Vibe:</span> Powerful and Noble</p>
+                <h3>THE LEGENDARY DEPTH</h3>
+                <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices. A fragrance that rewrites the rules of masculine intensity.</p>
+                <p><span class="highlight">Performance:</span> Sillage is massive. This is a "one-spray" powerhouse that lasts 12+ hours on skin and days on clothing.</p>
             </div></div>
         </div>
         <div class="row rev">
-            <div class="img-box"><img src="assets/sauvage-right.png"></div>
+            <div class="img-box"><img src="assets/sauvage-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>OFFICIAL NOTES</h3>
-                <p><span class="highlight">Top:</span> Grapefruit & Cinnamon.<br><span class="highlight">Heart:</span> AOP Lavender.<br><span class="highlight">Base:</span> Rich Sandalwood.</p>
+                <h3>OFFICIAL COMPOSITION</h3>
+                <p><span class="highlight">Top Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit. A fiery opening that commands attention.</p>
+                <p><span class="highlight">Heart Notes:</span> A customized Lavender Essence AOP from Nyons. Rare, pure, and distinctively floral.</p>
+                <p><span class="highlight">Base Notes:</span> Licorice, Sandalwood, Amber, Patchouli and Haitian Vetiver. A dark, liquorish, and woody trail.</p>
             </div></div>
         </div>
     </section>
@@ -140,18 +144,20 @@
             <div class="perfume-sub">EAU DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/stronger-left.png"></div>
+            <div class="img-box"><img src="assets/stronger-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>THE FRAGRANCE</h3>
-                <p>A woody and amber fragrance with magnetic sensuality. Captivating and modern.</p>
-                <p><span class="highlight">Character:</span> Warm and Magnetic.<br><span class="highlight">Family:</span> Aromatic Fougère.</p>
+                <h3>MAGNETIC SENSUALITY</h3>
+                <p>Stronger With You lives in the present, molded by the energy of modernity. Unpredictable, it surprises with its originality, like the spicy accord in the top notes.</p>
+                <p><span class="highlight">The Vibe:</span> Communicating sensuality and elegance. It is the olfactory embodiment of an intense and lasting love.</p>
             </div></div>
         </div>
         <div class="row rev">
-            <div class="img-box"><img src="assets/stronger-right.png"></div>
+            <div class="img-box"><img src="assets/stronger-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>OFFICIAL NOTES</h3>
-                <p><span class="highlight">Top:</span> Pink Pepper.<br><span class="highlight">Heart:</span> Sage & Lavender.<br><span class="highlight">Base:</span> Smoky Vanilla & Chestnut.</p>
+                <h3>OLFACTORY ARCHITECTURE</h3>
+                <p><span class="highlight">Opening:</span> A blend of Cardamom, Pink Pepper, and Violet Leaves. A spicy, herbal start that vibrates.</p>
+                <p><span class="highlight">Heart:</span> Sage and Lavender. It brings a confident elegance, the easy nonchalance of youth.</p>
+                <p><span class="highlight">Base:</span> Smoky Vanilla Jungle Essence™ and Sugar-coated Chestnut accord. A sweet, smoky, and addictive finish.</p>
             </div></div>
         </div>
     </section>
@@ -165,18 +171,20 @@
             <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/image_26d833.png"></div>
+            <div class="img-box"><img src="assets/libre-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>THE FRAGRANCE</h3>
-                <p>The tension between French lavender and Moroccan orange blossom pushed to its extreme.</p>
-                <p><span class="highlight">Vibe:</span> Royal and Audacious.<br><span class="highlight">Occasion:</span> Luxury Evenings.</p>
+                <h3>BORN TO BE WILD</h3>
+                <p>Libre Intense is the fragrance of a woman who is roaring with freedom. The iconic structure of Libre, intensified. A burning floral duality between masculinity and femininity.</p>
+                <p><span class="highlight">The Woman:</span> Audacious, powerful, and fiercely independent. She doesn't just want freedom; she lives it intensely.</p>
             </div></div>
         </div>
         <div class="row rev">
-            <div class="img-box"><img src="assets/libre-right.png"></div>
+            <div class="img-box"><img src="assets/libre-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>OFFICIAL NOTES</h3>
-                <p><span class="highlight">Top:</span> Mandarin.<br><span class="highlight">Heart:</span> Royal Orchid.<br><span class="highlight">Base:</span> Madagascar Vanilla.</p>
+                <h3>THE RAW ELEMENTS</h3>
+                <p><span class="highlight">Top:</span> French Lavender, Mandarin Orange, and Bergamot. A clean, sharp, and citrusy entrance.</p>
+                <p><span class="highlight">Heart:</span> Moroccan Orange Blossom, Jasmine, and Royal Orchid. A floral explosion that is warm and regal.</p>
+                <p><span class="highlight">Base:</span> Madagascar Vanilla, Tonka Bean, Ambergris, and Vetiver. A deep, creamy, and long-lasting sillage.</p>
             </div></div>
         </div>
     </section>
@@ -190,18 +198,20 @@
             <div class="perfume-sub">EAU DE PARFUM</div>
         </div>
         <div class="row">
-            <div class="img-box"><img src="assets/image_2651c6.png"></div>
+            <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>THE FRAGRANCE</h3>
-                <p>Inspired by the duality of the modern woman. Bold yet elegant, mysterious and sensual.</p>
-                <p><span class="highlight">Style:</span> Seductive and Powerful.<br><span class="highlight">Family:</span> Amber Floral.</p>
+                <h3>IT'S SO GOOD TO BE BAD</h3>
+                <p>Good Girl is a bold and sophisticated fragrance, inspired by Carolina Herrera’s unique vision of the duality of the modern woman: audacious and sexy, elegant and enigmatic.</p>
+                <p><span class="highlight">The Essence:</span> Light and shadow collide. Sweet Jasmine meets dark Cocoa and Tonka in a mysterious dance of seduction.</p>
             </div></div>
         </div>
         <div class="row rev">
-            <div class="img-box"><img src="assets/image_26688e.png"></div>
+            <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OLFACTORY NOTES</h3>
-                <p><span class="highlight">Top:</span> Almond & Coffee.<br><span class="highlight">Heart:</span> Jasmine Sambac & Tuberose.<br><span class="highlight">Base:</span> Tonka Bean & Cocoa.</p>
+                <p><span class="highlight">Top:</span> Almond, Coffee, Bergamot and Lemon. A vibrant and energetic start.</p>
+                <p><span class="highlight">Heart:</span> Tuberose, Jasmine Sambac, Orris and Orange Blossom. The heart is rich, white floral, and feminine.</p>
+                <p><span class="highlight">Base:</span> Tonka Bean, Cacao, Vanilla, Praline, Sandalwood and Amber. A dark, gourmand, and velvet-smooth finish.</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -230,20 +240,36 @@
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
         const colors = ['#4A90E2', '#CD7F32', '#D4AF37', '#1a4d99'];
         let currentIdx = 0;
+        const scrollBtn = document.getElementById('scrollBtn');
+        const arrow = scrollBtn.querySelector('.arrow-icon');
 
         window.addEventListener('scroll', () => {
             sections.forEach((id, index) => {
                 const rect = document.getElementById(id).getBoundingClientRect();
-                if(rect.top >= -300 && rect.top <= 300) {
+                if(rect.top >= -window.innerHeight/2 && rect.top <= window.innerHeight/2) {
                     currentIdx = index;
                     document.documentElement.style.setProperty('--current-arrow-color', colors[index]);
+                    
+                    // تحويل السهم إذا وصلنا للقسم الأخير
+                    if(currentIdx === sections.length - 1) {
+                        arrow.classList.add('arrow-up');
+                        arrow.style.animation = "bounce-up 2s infinite";
+                    } else {
+                        arrow.classList.remove('arrow-up');
+                        arrow.style.animation = "bounce 2s infinite";
+                    }
                 }
             });
         });
 
-        document.getElementById('scrollBtn').onclick = () => {
-            currentIdx = (currentIdx + 1) % sections.length;
-            document.getElementById(sections[currentIdx]).scrollIntoView({ behavior: 'smooth' });
+        scrollBtn.onclick = () => {
+            if(currentIdx === sections.length - 1) {
+                // إذا كنا في الأخير، نرجع للأول
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // نزيد القسم التالي
+                document.getElementById(sections[currentIdx + 1]).scrollIntoView({ behavior: 'smooth' });
+            }
         };
     </script>
 </body>
