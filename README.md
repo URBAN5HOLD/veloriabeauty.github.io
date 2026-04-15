@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Velooria Beauty | The Elite Experience</title>
+    <title>Velooria Beauty | The Elite Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -16,7 +17,6 @@
 
         .logo-fixed { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 8px; color: #fff; }
 
-        /* سهم السكرول - طالع شوية وقريب للإبهام */
         .scroll-trigger {
             position: fixed; bottom: 15%; right: 25px; 
             width: 50px; height: 50px; z-index: 2000;
@@ -36,27 +36,22 @@
             scroll-snap-stop: always; position: relative; padding-bottom: 60px;
         }
 
-        /* تضييق فيديو Sauvage */
         .v-header-sauvage { width: 85%; margin: 0 auto; line-height: 0; }
         .v-header { width: 100%; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; object-fit: contain; }
 
         .bottle-center { text-align: center; padding: 30px 0; }
         .img-bottle { width: 40%; max-width: 150px; margin: 0 auto; }
-        .brand-logo { 
-            font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; 
-            letter-spacing: 6px; margin: 10px 0; border: none !important; /* حيدت الخط */
-        }
+        .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; letter-spacing: 6px; margin: 10px 0; border: none !important; }
         .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; }
 
-        /* تفاصيل حدا الصور */
         .row { display: flex; align-items: center; width: 100%; padding: 25px 8%; gap: 30px; }
         .row.rev { flex-direction: row-reverse; }
         .img-box { width: 50%; }
         .img-box img { width: 100%; border-radius: 2px; }
         
         .txt-box { width: 50%; color: #fff; }
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: 8px; color: var(--color); border: none !important; }
+        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 8px; color: var(--color); letter-spacing: 1px; }
         .txt-box p { font-size: 0.85rem; line-height: 1.6; color: #ccc; font-weight: 300; margin: 0; }
 
         .purchase-area { max-width: 1000px; margin: 30px auto; display: flex; gap: 30px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.05); width: 90%; }
@@ -95,16 +90,16 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/sauvage-left.jpg"></div>
-            <div class="txt-box"><h3>THE TOP</h3><p>Cinnamon, Nutmeg, Cardamom and Grapefruit. A spicy blast for an immediate magnetic impact.</p></div>
+            <div class="txt-box"><h3>THE TOP NOTES</h3><p>An explosive blend of Cinnamon, Nutmeg, and Cardamom mixed with Grapefruit for a sharp, spicy opening.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-right.jpg"></div>
-            <div class="txt-box"><h3>THE BASE</h3><p>Licorice, Sandalwood, Amber and Patchouli. A powerful, long-lasting trail that stays for 12+ hours.</p></div>
+            <div class="txt-box"><h3>THE BASE NOTES</h3><p>A rich trail of Licorice, Sandalwood, and Amber. Delivering a powerful, nocturnal intensity.</p></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; margin-bottom:20px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'">DECANT 10ML</h4><p style="color:#555; font-size:10px">HIGH CONCENTRATION</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'">DECANT 10ML</h4><p style="color:#555; font-size:10px">EXTRAIT DE PARFUM</p></div>
                     <img src="assets/sauvage-hand.jpg" class="mini-thumb">
                 </div>
                 <div style="display:flex; gap:10px"><div class="size-box">5ML</div><div class="size-box active-size">10ML</div></div>
@@ -124,16 +119,16 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/stronger-left.jpg"></div>
-            <div class="txt-box"><h3>THE ACCORD</h3><p>Rum, Bergamot and Elemi. A masculine intensity that is both bold, mysterious and sweet.</p></div>
+            <div class="txt-box"><h3>THE TOP NOTES</h3><p>A new addictive Rum accord combined with Bergamot for an immediate warm sensation.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-right.jpg"></div>
-            <div class="txt-box"><h3>THE SIGNATURE</h3><p>Smoky Chestnut and Madagascar Vanilla. Delivering an addictive and magnetic attraction.</p></div>
+            <div class="txt-box"><h3>THE HEART & BASE</h3><p>Lavender meets Smoky Chestnut and Madagascar Vanilla for a long-lasting magnetic attraction.</p></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
                 <div style="display:flex; justify-content:space-between; margin-bottom:20px">
-                    <div><h4 style="color:#fff; font-family:'Cinzel'">INTENSE 10ML</h4><p style="color:#555; font-size:10px">MAGNETIC SCENT</p></div>
+                    <div><h4 style="color:#fff; font-family:'Cinzel'">INTENSE 10ML</h4><p style="color:#555; font-size:10px">ABSOLUTE ELEGANCE</p></div>
                     <img src="assets/stronger-hand.jpg" class="mini-thumb">
                 </div>
                 <div style="display:flex; gap:10px"><div class="size-box">5ML</div><div class="size-box active-size">10ML</div></div>
@@ -153,11 +148,11 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/libre-left.jpg"></div>
-            <div class="txt-box"><h3>THE HEART</h3><p>French Lavender meets Moroccan Orange Blossom for a unique floral tension that defines freedom.</p></div>
+            <div class="txt-box"><h3>THE TOP NOTES</h3><p>French Lavender and Mandarin Orange. A bright, floral tension that defines freedom.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-right.jpg"></div>
-            <div class="txt-box"><h3>THE BASE</h3><p>Madagascar Vanilla and Ambergris. Providing a creamy, couture finish that lasts all day.</p></div>
+            <div class="txt-box"><h3>THE BASE NOTES</h3><p>Moroccan Orange Blossom mixed with creamy Vanilla and Ambergris for a couture finish.</p></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
@@ -182,11 +177,11 @@
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
-            <div class="txt-box"><h3>THE LIGHT</h3><p>Jasmine and Tuberose. The sweet, alluring qualities that give Good Girl its feminine side.</p></div>
+            <div class="txt-box"><h3>THE TOP NOTES</h3><p>Almond, Coffee, and Bergamot. A bold and sweet opening for a multi-dimensional woman.</p></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
-            <div class="txt-box"><h3>THE DARK</h3><p>Tonka Bean and Cocoa. Expressing the mysterious and seductive side of the modern woman.</p></div>
+            <div class="txt-box"><h3>THE BASE NOTES</h3><p>Cocoa and Tonka Bean express the mysterious and seductive side of the fragrance.</p></div>
         </div>
         <div class="purchase-area">
             <div style="flex:1">
