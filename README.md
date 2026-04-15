@@ -112,14 +112,6 @@
         .libre-t { --color: #D4AF37; --glow-color: rgba(212, 175, 55, 0.35); }
         .gg-t { --color: #1a4d99; --glow-color: rgba(26, 77, 153, 0.35); }
     </style>
-    <style>
-  /* هاد الكود كيحيد التنسيق ديال كاع الروابط لي فـ الصفحة */
-  a {
-    color: inherit !important;
-    text-decoration: none !important;
-    cursor: default !important;
-  }
-</style>
 </head>
 <body>
 
