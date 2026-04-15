@@ -23,8 +23,10 @@
 
         .bottle-center { text-align: center; padding: 30px 0; }
         .img-bottle { width: 40%; max-width: 150px; margin: 0 auto; }
+        
+        /* حيدت الخطوط من تحت الشعارات */
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #fff; letter-spacing: 6px; margin: 10px 0; border: none !important; }
-        .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; }
+        .perfume-sub { font-size: 0.7rem; color: var(--color); letter-spacing: 4px; text-transform: uppercase; border: none !important; }
 
         /* تقسيم اليمين واليسار */
         .row { display: flex; align-items: flex-start; width: 100%; padding: 25px 8%; gap: 40px; }
@@ -32,12 +34,13 @@
         .img-box { width: 45%; }
         .img-box img { width: 100%; border-radius: 2px; }
         
-        .txt-box { width: 55%; color: #fff; text-align: left; }
-        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 15px; color: var(--color); letter-spacing: 1px; border: none !important; }
-        .txt-box p { font-size: 0.8rem; line-height: 1.6; color: #ccc; font-weight: 300; margin-bottom: 12px; }
-        .txt-box ul { padding-left: 15px; margin: 10px 0; }
-        .txt-box li { font-size: 0.75rem; color: #aaa; margin-bottom: 8px; line-height: 1.4; }
-        .highlight { color: #fff; font-weight: 600; }
+        /* إصلاح المربعات البيضاء: جعل الخلفية شفافة */
+        .txt-box { width: 55%; color: #fff; text-align: left; background: transparent !important; }
+        .txt-box h3 { font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 15px; color: var(--color); letter-spacing: 1px; border: none !important; background: transparent !important; }
+        .txt-box p { font-size: 0.8rem; line-height: 1.6; color: #ccc; font-weight: 300; margin-bottom: 12px; background: transparent !important; }
+        .txt-box ul { padding-left: 15px; margin: 10px 0; list-style-type: none; background: transparent !important; }
+        .txt-box li { font-size: 0.75rem; color: #aaa; margin-bottom: 8px; line-height: 1.4; background: transparent !important; }
+        .highlight { color: #fff; font-weight: 600; background: transparent !important; }
 
         /* منطقة الشراء المصلحة */
         .purchase-area { max-width: 1000px; margin: 30px auto; display: flex; gap: 30px; padding: 30px; border-top: 1px solid rgba(255,255,255,0.05); width: 90%; }
@@ -49,11 +52,11 @@
         .active-size { border-color: var(--color); background: rgba(255,255,255,0.05); }
         .active-size span { color: var(--color); }
 
-        /* إصلاح الخطوط الزرقاء في الـ inputs */
+        /* حيدت الخطوط الزرقاء الجانبية من الـ inputs */
         input { 
             width: 100%; padding: 18px 0; margin-bottom: 10px; 
-            background: transparent; color: #fff; 
-            border: none; border-bottom: 1px solid rgba(255,255,255,0.15); 
+            background: transparent !important; color: #fff; 
+            border: none !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; 
             font-family: 'Montserrat'; font-size: 0.9rem; border-radius: 0;
         }
         input::placeholder { color: #444; text-transform: uppercase; letter-spacing: 1px; }
@@ -86,8 +89,8 @@
         <div class="v-header-sauvage"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
             <img src="assets/sauvage-bottle.png" class="img-bottle">
-            <h1 class="brand-logo">SAUVAGE</h1>
-            <div class="perfume-sub">ELIXIR / EXTRAIT DE PARFUM</div>
+            <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
+            <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/sauvage-left.jpg"></div>
@@ -112,9 +115,9 @@
                 <span class="highlight">Notes de Cœur :</span> Essence de Lavande de Nyons<br>
                 <span class="highlight">Notes de Fond :</span> Bois de Santal & Réglisse</p>
                 <ul>
-                    <li><span class="highlight">Notes de tête :</span> Première impression, dure 5 à 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Ressortent après la tête, durent 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Note sous-jacente qui reste jusqu'à 12 heures.</li>
+                    <li><span class="highlight">Notes de tête :</span> Première impression d’un parfum, dure entre 5 et 15 minutes.</li>
+                    <li><span class="highlight">Notes de cœur :</span> Commencent à ressortir après la tête, durent 20 à 60 minutes.</li>
+                    <li><span class="highlight">Notes de fond :</span> Note sous-jacente qui reste le plus longtemps (jusqu'à 12h).</li>
                 </ul>
             </div>
         </div>
@@ -152,7 +155,7 @@
                 <span class="highlight">Famille olfactive :</span> AMBRÉE Boisée<br>
                 <span class="highlight">La fragrance :</span> Addictive et Royale</p>
                 <h3>Le flacon</h3>
-                <p>Un dégradé de laque noire intense qui symbolise la puissance du parfum. Les lignes épurées et masculines reflètent l'élégance intemporelle de la marque.</p>
+                <p>Un dégradé de laque noire intense qui symbolise la puissance du parfum. Les lignes épurées reflètent l'élégance intemporelle.</p>
             </div>
         </div>
         <div class="row rev">
@@ -165,9 +168,9 @@
                 <span class="highlight">Notes de Cœur :</span> Lavande & Davana<br>
                 <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Cèdre</p>
                 <ul>
-                    <li><span class="highlight">Notes de tête :</span> Éclat immédiat du rhum, dure 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Transition florale noble, dure 1 heure.</li>
-                    <li><span class="highlight">Notes de fond :</span> Signature chaude et boisée, dure 8 heures.</li>
+                    <li><span class="highlight">Notes de tête :</span> Éclat immédiat du rhum, dure 5 à 15 minutes.</li>
+                    <li><span class="highlight">Notes de cœur :</span> Transition florale noble, dure 20 à 60 minutes.</li>
+                    <li><span class="highlight">Notes de fond :</span> Signature chaude et boisée, dure jusqu'à 8 heures.</li>
                 </ul>
             </div>
         </div>
@@ -192,20 +195,20 @@
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/libre.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
             <img src="assets/libre-bottle.png" class="img-bottle">
-            <h1 class="brand-logo">LIBRE</h1>
-            <div class="perfume-sub">EAU DE PARFUM / INTENSE</div>
+            <h1 class="brand-logo">LIBRE INTENSE</h1>
+            <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/libre-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>Libre Intense célèbre la liberté d'une femme audacieuse qui vit selon ses propres règles. Une dualité entre la lavande de France et la fleur d'oranger du Maroc, poussée à l'extrême.</p>
+                <p>Libre Intense célèbre la liberté d'une femme audacieuse. Une dualité entre la lavande de France et la fleur d'oranger du Maroc, poussée à son paroxysme.</p>
                 <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Audacieuse et Royale<br>
                 <span class="highlight">Occasion :</span> Luxe quotidien & Soirée<br>
                 <span class="highlight">Famille olfactive :</span> FLORALE Ambrée<br>
                 <span class="highlight">La fragrance :</span> Couture et Enivrante</p>
                 <h3>Le flacon</h3>
-                <p>Le Cassandre iconique de la maison est incrusté dans le verre comme un bijou, souligné par une couleur fauve brûlante qui reflète l'intensité du jus.</p>
+                <p>Le Cassandre iconique est incrusté dans le verre, souligné par une couleur fauve brûlante qui reflète l'intensité du jus.</p>
             </div>
         </div>
         <div class="row rev">
@@ -215,12 +218,12 @@
                 <p><span class="highlight">Ingrédients Principaux :</span> Lavande, Fleur d'Oranger, Vanille<br>
                 <span class="highlight">Famille Olfactive :</span> FOUGÈRE Florale<br>
                 <span class="highlight">Notes de Tête :</span> Lavande & Mandarine<br>
-                <span class="highlight">Notes de Cœur :</span> Jasmin Sambac & Orchidée<br>
+                <span class="highlight">Notes de Cœur :</span> Fleur d'Oranger & Jasmin Sambac<br>
                 <span class="highlight">Notes de Fond :</span> Vanille de Madagascar & Ambre Gris</p>
                 <ul>
-                    <li><span class="highlight">Notes de tête :</span> Tension fraîche, dure 10 à 15 minutes.</li>
-                    <li><span class="highlight">Notes de cœur :</span> Coeur floral brûlant, dure 1 heure.</li>
-                    <li><span class="highlight">Notes de fond :</span> Sillage crémeux et riche, dure 10 heures.</li>
+                    <li><span class="highlight">Notes de tête :</span> Tension fraîche, dure entre 5 et 15 minutes.</li>
+                    <li><span class="highlight">Notes de cœur :</span> Cœur floral brûlant, dure 20 à 60 minutes.</li>
+                    <li><span class="highlight">Notes de fond :</span> Sillage riche, reste le plus longtemps sur la peau.</li>
                 </ul>
             </div>
         </div>
@@ -246,13 +249,13 @@
         <div class="bottle-center">
             <img src="assets/goodgirl-bottle.png" class="img-bottle">
             <h1 class="brand-logo">GOOD GIRL</h1>
-            <div class="perfume-sub">EAU DE PARFUM / SUPREME</div>
+            <div class="perfume-sub">EAU DE PARFUM INTENSE</div>
         </div>
         <div class="row">
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box">
                 <h3>La fragrance</h3>
-                <p>La douceur et le pouvoir de séduction du jasmin renforcent encore l’éclat de Good Girl. Le côté mystérieux est révélé grâce au cacao riche en arômes et à l’enivrante fève tonka.</p>
+                <p>La douceur et le pouvoir de séduction du jasmin renforcent encore l’éclat de Good Girl. Le côté mystérieux est révélé grâce au cacao riche et à l’enivrante fève tonka.</p>
                 <p><span class="highlight">Pour :</span> Elle | <span class="highlight">Elle est :</span> Séductrice et Puissante<br>
                 <span class="highlight">Occasion :</span> Le jour et la nuit<br>
                 <span class="highlight">Famille olfactive :</span> AMBRÉE Ambrée Florale<br>
@@ -267,13 +270,13 @@
                 <h3>Ingrédients & Notes</h3>
                 <p><span class="highlight">Ingrédients Principaux :</span> Jasmin, Tubéreuse, Fève Tonka<br>
                 <span class="highlight">Famille Olfactive :</span> AMBRÉE Ambrée Florale<br>
-                <span class="highlight">Notes de Tête :</span> Amande<br>
+                <span class="highlight">Notes de Tête :</span> Amande (Première impression 5-15 min)<br>
                 <span class="highlight">Notes de Cœur :</span> Jasmin d’Arabie & Tubéreuse<br>
-                <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao</p>
+                <span class="highlight">Notes de Fond :</span> Fève Tonka & Cacao (Jusqu'à 6h)</p>
                 <ul>
-                    <li><span class="highlight">Notes de tête :</span> Première impression, dure 5 à 15 minutes.</li>
+                    <li><span class="highlight">Notes de tête :</span> Première impression, dure entre 5 et 15 minutes.</li>
                     <li><span class="highlight">Notes de cœur :</span> Ressortent après la tête, durent 20 à 60 minutes.</li>
-                    <li><span class="highlight">Notes de fond :</span> Note qui reste le plus longtemps (jusqu'à 6 heures).</li>
+                    <li><span class="highlight">Notes de fond :</span> Note qui reste le plus longtemps sur la peau.</li>
                 </ul>
             </div>
         </div>
@@ -297,12 +300,9 @@
     <script>
         function selectSize(element, price, sectionId) {
             const section = document.getElementById(sectionId);
-            const boxes = section.querySelectorAll('.size-box');
-            boxes.forEach(box => box.classList.remove('active-size'));
+            section.querySelectorAll('.size-box').forEach(box => box.classList.remove('active-size'));
             element.classList.add('active-size');
-            
-            const btn = section.querySelector('.order-btn');
-            btn.innerHTML = `COMMANDER | ${price} DH`;
+            section.querySelector('.order-btn').innerHTML = `COMMANDER | ${price} DH`;
         }
 
         const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
