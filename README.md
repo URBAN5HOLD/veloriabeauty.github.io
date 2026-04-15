@@ -1,125 +1,205 @@
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velooria | Luxury Collection</title>
+    <title>Velooria | Luxury Fragrance</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        .logo-fixed { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 12px; color: #fff; }
+        /* 1. تصفير كاع الهوامش باش يبدا الفيديو من راس الصفحة */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            text-decoration: none; 
+            border: none; 
+            outline: none;
+        }
 
-        .product-section { position: relative; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 50px; }
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
 
-        /* 1. Video */
-        .v-header { height: 100vh; width: 100%; position: relative; }
-        .bg-v { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); }
+        .logo-fixed { 
+            position: fixed; 
+            top: 25px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 1000; 
+            font-family: 'Cinzel', serif; 
+            font-size: 1.5rem; 
+            letter-spacing: 12px; 
+            color: #fff; 
+            text-shadow: 0 0 15px rgba(0,0,0,0.8); 
+        }
 
-        /* 2. Central Bottle & Title */
-        .bottle-center { text-align: center; padding: 80px 0; background: #000; }
-        .img-bottle { width: 80vw; max-width: 400px; filter: drop-shadow(0 0 40px var(--glow)); }
-        .brand-logo { font-family: 'Cinzel', serif; font-size: 2.8rem; margin-top: 20px; letter-spacing: 6px; }
+        .product-section { width: 100%; position: relative; }
 
-        /* 3. Details (Free Layout) */
-        .row { display: flex; align-items: center; padding: 60px 10%; gap: 60px; }
+        /* 2. الـ Video Header: لاصق لفوق */
+        .v-header { 
+            height: 100vh; 
+            width: 100%; 
+            margin: 0; 
+            padding: 0; 
+            overflow: hidden; 
+            position: relative;
+        }
+        .bg-v { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            filter: brightness(0.5); 
+            display: block; /* كيحيد الفراغ الصغير اللي كيكون تحت الفيديو */
+        }
+
+        /* 3. Central Bottle Section */
+        .bottle-center { text-align: center; padding: 100px 0; background: #000; }
+        .img-bottle { width: 85vw; max-width: 420px; filter: drop-shadow(0 0 50px var(--glow)); }
+        .brand-logo { font-family: 'Cinzel', serif; font-size: 3.2rem; margin-top: 20px; letter-spacing: 8px; }
+
+        /* 4. Wide Rows: الصور أقصى اليمين وأقصى اليسار */
+        .row { 
+            display: flex; 
+            align-items: center; 
+            width: 100%; 
+            min-height: 600px; 
+            margin: 0; /* حيدنا المارجن باش نتحكمو في الفراغ داخليا */
+            padding: 50px 0;
+        }
         .row.rev { flex-direction: row-reverse; }
-        .img-box { flex: 1; display: flex; justify-content: center; }
-        .img-box img { width: 100%; max-width: 420px; filter: brightness(0.8); }
+
+        /* الصندوق ديال الصورة: لاصق في الحافة */
+        .img-box { width: 50%; display: flex; }
+        .row .img-box { justify-content: flex-start; } /* الصورة الأولى أقصى اليسار */
+        .row.rev .img-box { justify-content: flex-end; } /* الصورة الثانية أقصى اليمين */
         
-        .txt-box { flex: 1.2; position: relative; }
-        /* الانعكاس الملون الضبابي */
-        .glow-effect { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: 130%; background: radial-gradient(circle, var(--glow) 0%, transparent 75%); opacity: 0.12; filter: blur(70px); z-index: -1; }
+        .img-box img { 
+            width: 100%; 
+            max-width: 700px; 
+            height: auto; 
+            filter: brightness(0.8); 
+            object-fit: cover;
+        }
 
-        h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color); margin-bottom: 15px; }
-        .p-text { font-size: 1rem; line-height: 1.8; color: #ccc; text-align: justify; }
-        .notes { margin-top: 20px; list-style: none; }
-        .notes li { margin-bottom: 8px; font-size: 0.9rem; }
-        .notes b { color: var(--color); letter-spacing: 1px; }
+        /* الصندوق ديال النص */
+        .txt-box { 
+            width: 50%; 
+            padding: 0 6%; 
+            position: relative; 
+            z-index: 5; 
+            text-align: center; 
+        }
+        
+        /* تقوية الانعكاس الضبابي الملون */
+        .glow-effect { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            width: 130%; height: 130%; 
+            background: radial-gradient(circle, var(--glow) 0%, transparent 75%); 
+            opacity: 0.45; /* جهدت اللون ورا الكتابة */
+            filter: blur(100px); 
+            z-index: -1; 
+        }
 
-        /* 4. Order Form */
-        .f-wrap { padding: 80px 0; text-align: center; }
-        .f-glass { max-width: 450px; margin: 0 auto; padding: 30px; }
-        .in-f { width: 100%; padding: 18px; margin-bottom: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 8px; text-align: center; }
-        .btn-f { width: 100%; padding: 20px; background: #f2f2f2; color: #000; border: none; font-weight: 800; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
-        .btn-f:hover { background: #fff; transform: scale(1.02); }
-        .pri-txt { color: var(--color); margin-top: 15px; font-style: italic; font-size: 0.85rem; }
+        h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--color); margin-bottom: 25px; text-transform: uppercase; }
+        .desc-full { font-size: 1.05rem; line-height: 1.9; color: #eee; text-align: center; }
 
-        /* الألوان لكل عطر */
-        .sauv-t { --glow: #0047ab; --color: #4A90E2; }
-        .arman-t { --glow: #cd7f32; --color: #CD7F32; }
-        .libre-t { --glow: #d4af37; --color: #D4AF37; }
-        .gg-t { --glow: #ff0000; --color: #E31E24; }
+        .specs-list { margin-top: 25px; list-style: none; display: inline-block; text-align: left; }
+        .specs-list li { margin-bottom: 10px; font-size: 0.95rem; }
+        .specs-list b { color: var(--color); letter-spacing: 1px; }
+        
+        .tech-notes { font-size: 0.85rem; color: #888; margin-top: 30px; line-height: 1.7; font-style: italic; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-        @media (max-width: 900px) { .row, .row.rev { flex-direction: column; text-align: center; padding: 40px 5%; } }
+        /* Form */
+        .f-wrap { padding: 100px 0; text-align: center; background: #000; }
+        .f-glass { max-width: 480px; margin: 0 auto; padding: 40px; }
+        .in-f { width: 100%; padding: 20px; margin-bottom: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 4px; text-align: center; }
+        .btn-f { width: 100%; padding: 22px; background: #fff; color: #000; font-weight: 800; cursor: pointer; letter-spacing: 2px; border-radius: 4px; transition: 0.4s; }
+        .btn-f:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255,255,255,0.2); }
+        .pri-txt { color: var(--color); margin-top: 20px; font-weight: 600; font-size: 0.9rem; }
+
+        /* Themes */
+        .gg-t { --glow: #b30000; --color: #E31E24; }
+        .sauv-t { --glow: #0033cc; --color: #4A90E2; }
+        .arman-t { --glow: #8b4513; --color: #CD7F32; }
+        .libre-t { --glow: #b8860b; --color: #D4AF37; }
+
+        @media (max-width: 1000px) { 
+            .row, .row.rev { flex-direction: column; text-align: center; } 
+            .img-box, .txt-box { width: 100%; padding: 30px 5%; }
+            .img-box { justify-content: center !important; }
+        }
     </style>
 </head>
 <body>
 
     <div class="logo-fixed">VELOORIA</div>
 
-    <div class="product-section sauv-t">
-        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
-        <div class="bottle-center"><img src="assets/sauvage-bottle.png" class="img-bottle"><h1 class="brand-logo">SAUVAGE</h1></div>
-        
-        <div class="row">
-            <div class="img-box"><img src="assets/sauvage-1.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p class="p-text">Sauvage Elixir is an extraordinarily concentrated fragrance steeped in the iconic freshness of Sauvage with an intoxicating heart of Spices.</p></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/sauvage-2.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Composition</h3><p class="p-text">A blend of rich Woods and Lavender essence, pushing the boundaries of extreme concentration.</p></div>
-        </div>
-
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f"><input type="tel" placeholder="رقم الهاتف" class="in-f"><input type="text" placeholder="العنوان" class="in-f"><button type="submit" class="btn-f">احجز الآن | 319 DH</button><p class="pri-txt">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
-    </div>
-
-    <div class="product-section arman-t">
-        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/armani.mp4" type="video/mp4"></video></div>
-        <div class="bottle-center"><img src="assets/armani-bottle.png" class="img-bottle"><h1 class="brand-logo">STRONGER WITH YOU</h1></div>
-        
-        <div class="row">
-            <div class="img-box"><img src="assets/armani-1.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p class="p-text">A warm, sensual story of excitement featuring notes of spicy cardamom and smoky vanilla.</p></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/armani-2.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Notes</h3><p class="p-text">Top: Cardamom, Heart: Sage, Base: Vanilla & Chestnut.</p></div>
-        </div>
-
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f"><input type="tel" placeholder="رقم الهاتف" class="in-f"><input type="text" placeholder="العنوان" class="in-f"><button type="submit" class="btn-f">احجز الآن | 289 DH</button><p class="pri-txt">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
-    </div>
-
-    <div class="product-section libre-t">
-        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/libre.mp4" type="video/mp4"></video></div>
-        <div class="bottle-center"><img src="assets/libre-bottle.png" class="img-bottle"><h1 class="brand-logo">LIBRE</h1></div>
-        
-        <div class="row">
-            <div class="img-box"><img src="assets/libre-1.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p class="p-text">The burning sensuality of Moroccan orange blossom twisted with French lavender.</p></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/libre-2.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Bottle</h3><p class="p-text">A couture statement with the iconic oversized YSL logo wrapped around the glass.</p></div>
-        </div>
-
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f"><input type="tel" placeholder="رقم الهاتف" class="in-f"><input type="text" placeholder="العنوان" class="in-f"><button type="submit" class="btn-f">احجز الآن | 299 DH</button><p class="pri-txt">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
-    </div>
-
     <div class="product-section gg-t">
-        <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/goodgirl.mp4" type="video/mp4"></video></div>
-        <div class="bottle-center"><img src="assets/goodgirl-bottle.png" class="img-bottle"><h1 class="brand-logo">GOOD GIRL GLAM</h1></div>
         
-        <div class="row">
-            <div class="img-box"><img src="assets/gg-1.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>The Fragrance</h3><p class="p-text">Intense cherry top notes echoed in its shimmering stiletto bottle. A spectacular expression of femininity.</p></div>
-        </div>
-        <div class="row rev">
-            <div class="img-box"><img src="assets/gg-2.jpg"></div>
-            <div class="txt-box"><div class="glow-effect"></div><h3>Composition</h3><p class="p-text">Top: Black Cherry, Heart: Rose, Base: Vanilla Bourbon.</p></div>
+        <div class="v-header">
+            <video autoplay muted loop playsinline class="bg-v">
+                <source src="assets/goodgirl.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f"><input type="tel" placeholder="رقم الهاتف" class="in-f"><input type="text" placeholder="العنوان" class="in-f"><button type="submit" class="btn-f">احجز الآن | 299 DH</button><p class="pri-txt">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
+        <div class="bottle-center">
+            <img src="assets/goodgirl-bottle.png" class="img-bottle">
+            <h1 class="brand-logo">GOOD GIRL</h1>
+        </div>
+        
+        <div class="row">
+            <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
+            <div class="txt-box">
+                <div class="glow-effect"></div>
+                <h3>The Fragrance</h3>
+                <p class="desc-full">
+                    The sweet, alluring qualities of jasmine bring Good Girl a bright femininity. Richly fragrant cocoa and intoxicating tonka express Good Girl’s mysterious side, while almond and coffee bring notes of bold vibrancy.
+                    <br><br>
+                    Combining haute couture aesthetics with technical expertise, the iconic Good Girl stiletto reflects the powerful women who inspire its silhouette.
+                </p>
+                <ul class="specs-list">
+                    <li><b>For:</b> Her</li>
+                    <li><b>She Is:</b> Seductive & Strong</li>
+                    <li><b>Occasion:</b> Day & Night</li>
+                    <li><b>Olfactive Family:</b> AMBERY Ambery Floral</li>
+                    <li><b>The Fragrance:</b> Powerful & Provocative</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row rev">
+            <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
+            <div class="txt-box">
+                <div class="glow-effect"></div>
+                <h3>Notes & Ingredients</h3>
+                <div class="desc-full">
+                    <p><b>Key Ingredients:</b> Jasmine, Tuberose, Tonka Bean</p>
+                    <p><b>Top Notes:</b> Almond</p>
+                    <p><b>Heart Notes:</b> Jasmine Sambac & Tuberose Chrystal</p>
+                    <p><b>Bottom Notes:</b> Tonka Bean & Cocoa</p>
+                </div>
+                <div class="tech-notes">
+                    <p>*Top notes: First impression of a perfume, last 5-15 minutes after applying to skin.</p>
+                    <p>*Heart notes: Start to come through as the top notes fade, last approximately 20-60 minutes.</p>
+                    <p>*Base notes: The underlying aroma throughout the wear of the perfume. Lingers the longest on skin (up to 6 hours) after the other notes have faded.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-wrap">
+            <form class="f-glass">
+                <input type="text" placeholder="الاسم الكامل" class="in-f" required>
+                <input type="tel" placeholder="رقم الهاتف" class="in-f" required>
+                <input type="text" placeholder="المدينة والعنوان" class="in-f" required>
+                <button type="submit" class="btn-f">احجز الآن | 299 DH</button>
+                <p class="pri-txt" dir="rtl">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p>
+            </form>
+        </div>
     </div>
 
 </body>
