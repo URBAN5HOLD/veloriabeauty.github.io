@@ -34,10 +34,10 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        .scroll-trigger { 
+       .scroll-trigger { 
             position: fixed; 
-            bottom: 30px; /* هادي اللي كتنزلو لتحت */
-            right: 25px;  /* هادي اللي كتجيبو لليمن */
+            bottom: 18%; /* هاد القيمة غاتطلعو لبلاصة مريحة للإبهام */
+            right: 25px; 
             width: 50px; 
             height: 50px; 
             z-index: 10001; 
