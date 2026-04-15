@@ -112,6 +112,17 @@
         .libre-t { --color: #D4AF37; --glow-color: rgba(212, 175, 55, 0.35); }
         .gg-t { --color: #1a4d99; --glow-color: rgba(26, 77, 153, 0.35); }
     </style>
+    <style>
+  /* هاد الكود كيمسح أي رابط فيه كلمة github.io من الشاشة بمرة */
+  a[href*="github.io"], 
+  a:contains("github.io") {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    z-index: -1000 !important;
+  }
+</style>
 </head>
 <body>
 
