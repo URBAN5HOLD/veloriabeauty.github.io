@@ -34,10 +34,11 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-      .scroll-trigger { 
+   .scroll-trigger { 
     position: fixed; 
-    bottom: 20%; /* طلعناه لـ 20% باش يجي مريح للإبهام */
-    right: 25px; 
+    bottom: 20%; /* طلعناه بـ 20% من التحت كيف بغيتي */
+    left: 50%;   /* حطيناه في النص ديال الشاشة */
+    transform: translateX(-50%); /* هادي هي اللي كتجيبو في السنطر بالظبط */
     width: 50px; 
     height: 50px; 
     z-index: 10001; 
