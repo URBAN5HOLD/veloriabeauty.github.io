@@ -35,22 +35,21 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* ضل خفيف باش تبان فخمة */
         }
         }
-
-       /* هاد الجزء هو المسؤول على وضعية السهم وشكله */
-        .scroll-trigger { 
+.scroll-trigger { 
             position: fixed; 
-            bottom: 15%; /* باش يجي قريب للإبهام */
-            right: 25px; /* باش يرجع لليمن */
-            width: 45px; 
-            height: 45px; 
-            z-index: 10001; /* باش يبقى فوق اللوغو والفيديوهات */
+            bottom: 30px; /* هادي هي اللي غاترجعو لتحت قاع */
+            right: 25px;  /* هادي غاترجعو لليمن */
+            width: 50px; 
+            height: 50px; 
+            z-index: 10001; /* باش يبقى ديما هو الفوقاني وميتغطاش */
             cursor: pointer;
             display: flex; 
             align-items: center; 
             justify-content: center;
+            background: rgba(0,0,0,0.2); /* ضل خفيف بزاف باش يبان فوق الصور */
+            border-radius: 50%;
         }
         
-        /* هاد الجزء هو المسؤول على لون السهم والتحريك ديالو */
         .arrow-icon { 
             width: 18px; 
             height: 18px; 
