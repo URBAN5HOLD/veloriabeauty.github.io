@@ -11,13 +11,13 @@
         
         .logo-fixed { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 12px; color: #fff; text-shadow: 0 0 15px rgba(0,0,0,0.8); }
         
-        .product-section { width: 100%; position: relative; border: none; }
+        .product-section { width: 100%; position: relative; }
         .v-header { height: 100vh; width: 100%; margin: 0; padding: 0; overflow: hidden; position: relative; }
         .bg-v { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); display: block; }
         
         .bottle-center { text-align: center; padding: 100px 0; background: #000; }
         .img-bottle { width: 85vw; max-width: 420px; filter: drop-shadow(0 0 50px var(--glow)); }
-        .brand-logo { font-family: 'Cinzel', serif; font-size: 3.2rem; margin-top: 20px; letter-spacing: 8px; border: none !important; }
+        .brand-logo { font-family: 'Cinzel', serif; font-size: 3.2rem; margin-top: 20px; letter-spacing: 8px; }
 
         .row { display: flex; align-items: center; width: 100%; min-height: 600px; padding: 50px 0; }
         .row.rev { flex-direction: row-reverse; }
@@ -30,7 +30,7 @@
         .txt-box { width: 50%; padding: 0 6%; position: relative; z-index: 5; text-align: center; }
         .glow-effect { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: 130%; background: radial-gradient(circle, var(--glow) 0%, transparent 75%); opacity: 0.45; filter: blur(100px); z-index: -1; }
 
-        h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--color); margin-bottom: 25px; text-transform: uppercase; border: none !important; }
+        h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--color); margin-bottom: 25px; text-transform: uppercase; }
         .desc-full { font-size: 1.05rem; line-height: 1.9; color: #eee; text-align: center; }
         
         .specs-list { margin-top: 25px; list-style: none; display: inline-block; text-align: left; }
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button></form></div>
+        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button><p class="pri-txt" dir="rtl">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
     </div>
 
     <div class="product-section stron-t">
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button></form></div>
+        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button><p class="pri-txt" dir="rtl">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
     </div>
 
     <div class="product-section libre-t">
@@ -173,7 +173,7 @@
                 </div>
             </div>
         </div>
-        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button></form></div>
+        <div class="f-wrap"><form class="f-glass"><input type="text" placeholder="الاسم الكامل" class="in-f" required><input type="tel" placeholder="رقم الهاتف" class="in-f" required><input type="text" placeholder="المدينة والعنوان" class="in-f" required><button type="submit" class="btn-f">احجز الآن | 319 DH</button><p class="pri-txt" dir="rtl">أولوية المعالجة والشحن تمنح لأسبقية الحجز</p></form></div>
     </div>
 
     <div class="product-section gg-t">
