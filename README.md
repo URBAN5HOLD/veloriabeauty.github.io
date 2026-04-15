@@ -20,9 +20,20 @@
         }
 
         .logo-fixed { 
-            position: fixed; top: 25px; left: 50%; transform: translateX(-50%); 
-            z-index: 1000; font-family: 'Cinzel', serif; font-size: 1.2rem; 
-            letter-spacing: 10px; color: #fff !important; pointer-events: none;
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            background-color: #000 !important; /* هادي هي اللي غتغطي أي كتابة زرقاء وراها */
+            padding: 25px 0; 
+            z-index: 10000; 
+            font-family: 'Cinzel', serif; 
+            font-size: 1.2rem; 
+            letter-spacing: 10px; 
+            color: #fff !important; 
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* ضل خفيف باش تبان فخمة */
+        }
         }
 
         .scroll-trigger { 
