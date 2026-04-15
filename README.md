@@ -36,20 +36,30 @@
         }
         }
 
-       .scroll-trigger { 
+       /* هاد الجزء هو المسؤول على وضعية السهم وشكله */
+        .scroll-trigger { 
             position: fixed; 
-            top: 85%; /* هبطناه شوية لتحت باش يبعد على الزحام */
-            right: 30px; /* دفعناه لليمن باش يرجع لبلاصتو الطبيعية */
-            transform: translateY(-50%);
+            bottom: 15%; /* باش يجي قريب للإبهام */
+            right: 25px; /* باش يرجع لليمن */
             width: 45px; 
             height: 45px; 
-            z-index: 10001; /* خاصو يكون كبر من z-index ديال اللوغو باش يبقى ديما هو الفوقاني */
+            z-index: 10001; /* باش يبقى فوق اللوغو والفيديوهات */
             cursor: pointer;
             display: flex; 
             align-items: center; 
             justify-content: center;
-            background: rgba(0,0,0,0.5) !important; /* زدت ليه خلفية خفيفة باش يبان فوق الصور */
-            border-radius: 50%;
+        }
+        
+        /* هاد الجزء هو المسؤول على لون السهم والتحريك ديالو */
+        .arrow-icon { 
+            width: 18px; 
+            height: 18px; 
+            border-right: 3.5px solid var(--current-arrow-color, #fff) !important; 
+            border-bottom: 3.5px solid var(--current-arrow-color, #fff) !important; 
+            transform: rotate(45deg); 
+            transition: all 0.5s ease;
+            animation: bounce 2s infinite;
+        }
         }
         }
         .arrow-icon { 
