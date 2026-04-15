@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Velooria Beauty | Luxury Collection</title>
+    <title>Velooria Beauty | Official Luxury Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -25,7 +25,7 @@
             letter-spacing: 10px; color: #fff !important; pointer-events: none;
         }
 
-        /* The Arrow: 75% depth, no circle */
+        /* Smart Arrow: Positioned 75% down */
         .scroll-trigger { 
             position: fixed; top: 75%; right: 25px; 
             transform: translateY(-50%);
@@ -58,7 +58,7 @@
         .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
 
-        /* Free Glow Effect behind text */
+        /* Free Glow Effect */
         .text-glow-free {
             position: relative; z-index: 2; padding: 25px;
             background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important;
@@ -74,7 +74,6 @@
         .txt-box p { font-size: 0.95rem; line-height: 1.9; color: #f0f0f0 !important; font-weight: 300; margin-bottom: 12px; }
         .highlight { color: var(--color) !important; font-weight: 600; font-size: 0.85rem; margin-right: 5px; }
         
-        /* Purchase Area */
         .purchase-area { 
             max-width: 1000px; margin: 40px auto; display: flex; gap: 40px; padding: 40px; 
             border-top: 1px solid rgba(255,255,255,0.1) !important; 
@@ -119,8 +118,8 @@
             <div class="img-box"><img src="assets/image_25f332.png"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE FRAGRANCE</h3>
-                <p>An extraordinary concentration where the iconic freshness of Sauvage is intoxicated by a custom-made heart of spices.</p>
-                <p><span class="highlight">Character:</span> Powerful, Noble, and Wild.<br><span class="highlight">Longevity:</span> Up to 12 hours.</p>
+                <p>An extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices.</p>
+                <p><span class="highlight">Gender:</span> Men<br><span class="highlight">Vibe:</span> Powerful and Noble</p>
             </div></div>
         </div>
         <div class="row rev">
@@ -144,15 +143,15 @@
             <div class="img-box"><img src="assets/stronger-left.png"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE FRAGRANCE</h3>
-                <p>A woody and amber fragrance with magnetic sensuality. Captivating, bold, and modern.</p>
-                <p><span class="highlight">Vibe:</span> Warm and Magnetic.<br><span class="highlight">Family:</span> Aromatic Fougère.</p>
+                <p>A woody and amber fragrance with magnetic sensuality. Captivating and modern.</p>
+                <p><span class="highlight">Character:</span> Warm and Magnetic.<br><span class="highlight">Family:</span> Aromatic Fougère.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-right.png"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OFFICIAL NOTES</h3>
-                <p><span class="highlight">Top:</span> Pink Pepper & Cardamom.<br><span class="highlight">Heart:</span> Sage & Lavender.<br><span class="highlight">Base:</span> Smoky Vanilla & Chestnut.</p>
+                <p><span class="highlight">Top:</span> Pink Pepper.<br><span class="highlight">Heart:</span> Sage & Lavender.<br><span class="highlight">Base:</span> Smoky Vanilla & Chestnut.</p>
             </div></div>
         </div>
     </section>
@@ -170,14 +169,14 @@
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE FRAGRANCE</h3>
                 <p>The tension between French lavender and Moroccan orange blossom pushed to its extreme.</p>
-                <p><span class="highlight">Character:</span> Royal and Audacious.<br><span class="highlight">Performance:</span> Intense Sillage.</p>
+                <p><span class="highlight">Vibe:</span> Royal and Audacious.<br><span class="highlight">Occasion:</span> Luxury Evenings.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-right.png"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OFFICIAL NOTES</h3>
-                <p><span class="highlight">Top:</span> Mandarin & Bergamot.<br><span class="highlight">Heart:</span> Royal Orchid & Lavender.<br><span class="highlight">Base:</span> Madagascar Vanilla.</p>
+                <p><span class="highlight">Top:</span> Mandarin.<br><span class="highlight">Heart:</span> Royal Orchid.<br><span class="highlight">Base:</span> Madagascar Vanilla.</p>
             </div></div>
         </div>
     </section>
@@ -194,14 +193,14 @@
             <div class="img-box"><img src="assets/image_2651c6.png"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE FRAGRANCE</h3>
-                <p>A sophisticated fragrance inspired by the duality of the modern woman. Bold yet elegant.</p>
+                <p>Inspired by the duality of the modern woman. Bold yet elegant, mysterious and sensual.</p>
                 <p><span class="highlight">Style:</span> Seductive and Powerful.<br><span class="highlight">Family:</span> Amber Floral.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/image_26688e.png"></div>
             <div class="txt-box"><div class="text-glow-free">
-                <h3>OFFICIAL NOTES</h3>
+                <h3>OLFACTORY NOTES</h3>
                 <p><span class="highlight">Top:</span> Almond & Coffee.<br><span class="highlight">Heart:</span> Jasmine Sambac & Tuberose.<br><span class="highlight">Base:</span> Tonka Bean & Cocoa.</p>
             </div></div>
         </div>
