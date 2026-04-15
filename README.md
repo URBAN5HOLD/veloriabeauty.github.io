@@ -25,7 +25,6 @@
             letter-spacing: 10px; color: #fff !important; pointer-events: none;
         }
 
-        /* Smart Navigation Arrow */
         .scroll-trigger { 
             position: fixed; top: 75%; right: 25px; 
             transform: translateY(-50%);
@@ -39,7 +38,7 @@
             transform: rotate(45deg); animation: bounce 2s infinite;
             transition: 0.5s ease;
         }
-        .arrow-up { transform: rotate(-135deg) !important; } /* تدوير السهم للفوق في الأخير */
+        .arrow-up { transform: rotate(-135deg) !important; }
 
         @keyframes bounce { 0%, 100% { transform: translateY(-5px) rotate(45deg); } 50% { transform: translateY(5px) rotate(45deg); } }
         @keyframes bounce-up { 0%, 100% { transform: translateY(5px) rotate(-135deg); } 50% { transform: translateY(-5px) rotate(-135deg); } }
@@ -121,17 +120,29 @@
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE LEGENDARY DEPTH</h3>
                 <p>Sauvage Elixir is an extraordinary concentration. A wild freshness that intoxicates a custom-made heart of spices. A fragrance that rewrites the rules of masculine intensity.</p>
-                <p><span class="highlight">Performance:</span> Sillage is massive. This is a "one-spray" powerhouse that lasts 12+ hours on skin and days on clothing.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/sauvage-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OFFICIAL COMPOSITION</h3>
-                <p><span class="highlight">Top Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit. A fiery opening that commands attention.</p>
-                <p><span class="highlight">Heart Notes:</span> A customized Lavender Essence AOP from Nyons. Rare, pure, and distinctively floral.</p>
-                <p><span class="highlight">Base Notes:</span> Licorice, Sandalwood, Amber, Patchouli and Haitian Vetiver. A dark, liquorish, and woody trail.</p>
+                <p><span class="highlight">Top Notes:</span> Nutmeg, Cinnamon, Cardamom and Grapefruit.</p>
+                <p><span class="highlight">Heart Notes:</span> A customized Lavender Essence AOP from Nyons.</p>
+                <p><span class="highlight">Base Notes:</span> Licorice, Sandalwood, Amber, and Patchouli.</p>
             </div></div>
+        </div>
+        <div class="purchase-area">
+            <div style="flex:1">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
+                    <div><h4 style="font-family:'Cinzel'">SAUVAGE ELIXIR</h4><p style="color:#666; font-size:10px">10ML / 319 DH</p></div>
+                    <img src="assets/sauvage-thumb.png" class="mini-thumb">
+                </div>
+                <div class="size-container">
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec1')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec1')">10ML<span>160 SPRAYS</span></div>
+                </div>
+            </div>
+            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -147,18 +158,30 @@
             <div class="img-box"><img src="assets/stronger-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>MAGNETIC SENSUALITY</h3>
-                <p>Stronger With You lives in the present, molded by the energy of modernity. Unpredictable, it surprises with its originality, like the spicy accord in the top notes.</p>
-                <p><span class="highlight">The Vibe:</span> Communicating sensuality and elegance. It is the olfactory embodiment of an intense and lasting love.</p>
+                <p>Stronger With You lives in the present, molded by the energy of modernity. Unpredictable, it surprises with its originality.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/stronger-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OLFACTORY ARCHITECTURE</h3>
-                <p><span class="highlight">Opening:</span> A blend of Cardamom, Pink Pepper, and Violet Leaves. A spicy, herbal start that vibrates.</p>
-                <p><span class="highlight">Heart:</span> Sage and Lavender. It brings a confident elegance, the easy nonchalance of youth.</p>
-                <p><span class="highlight">Base:</span> Smoky Vanilla Jungle Essence™ and Sugar-coated Chestnut accord. A sweet, smoky, and addictive finish.</p>
+                <p><span class="highlight">Opening:</span> Cardamom, Pink Pepper, and Violet Leaves.</p>
+                <p><span class="highlight">Heart:</span> Sage and Lavender bring confident elegance.</p>
+                <p><span class="highlight">Base:</span> Smoky Vanilla and Sugar-coated Chestnut accord.</p>
             </div></div>
+        </div>
+        <div class="purchase-area">
+            <div style="flex:1">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
+                    <div><h4 style="font-family:'Cinzel'">STRONGER WITH YOU</h4><p style="color:#666; font-size:10px">10ML / 319 DH</p></div>
+                    <img src="assets/stronger-thumb.png" class="mini-thumb">
+                </div>
+                <div class="size-container">
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec2')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec2')">10ML<span>160 SPRAYS</span></div>
+                </div>
+            </div>
+            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -174,18 +197,30 @@
             <div class="img-box"><img src="assets/libre-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>BORN TO BE WILD</h3>
-                <p>Libre Intense is the fragrance of a woman who is roaring with freedom. The iconic structure of Libre, intensified. A burning floral duality between masculinity and femininity.</p>
-                <p><span class="highlight">The Woman:</span> Audacious, powerful, and fiercely independent. She doesn't just want freedom; she lives it intensely.</p>
+                <p>The iconic structure of Libre, intensified. A burning floral duality between masculinity and femininity.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/libre-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>THE RAW ELEMENTS</h3>
-                <p><span class="highlight">Top:</span> French Lavender, Mandarin Orange, and Bergamot. A clean, sharp, and citrusy entrance.</p>
-                <p><span class="highlight">Heart:</span> Moroccan Orange Blossom, Jasmine, and Royal Orchid. A floral explosion that is warm and regal.</p>
-                <p><span class="highlight">Base:</span> Madagascar Vanilla, Tonka Bean, Ambergris, and Vetiver. A deep, creamy, and long-lasting sillage.</p>
+                <p><span class="highlight">Top:</span> French Lavender, Mandarin and Bergamot.</p>
+                <p><span class="highlight">Heart:</span> Moroccan Orange Blossom and Royal Orchid.</p>
+                <p><span class="highlight">Base:</span> Madagascar Vanilla and Tonka Bean.</p>
             </div></div>
+        </div>
+        <div class="purchase-area">
+            <div style="flex:1">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px">
+                    <div><h4 style="font-family:'Cinzel'">LIBRE INTENSE</h4><p style="color:#666; font-size:10px">10ML / 319 DH</p></div>
+                    <img src="assets/libre-thumb.png" class="mini-thumb">
+                </div>
+                <div class="size-container">
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec3')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec3')">10ML<span>160 SPRAYS</span></div>
+                </div>
+            </div>
+            <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
         </div>
     </section>
 
@@ -201,17 +236,16 @@
             <div class="img-box"><img src="assets/gg-detail-left.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>IT'S SO GOOD TO BE BAD</h3>
-                <p>Good Girl is a bold and sophisticated fragrance, inspired by Carolina Herrera’s unique vision of the duality of the modern woman: audacious and sexy, elegant and enigmatic.</p>
-                <p><span class="highlight">The Essence:</span> Light and shadow collide. Sweet Jasmine meets dark Cocoa and Tonka in a mysterious dance of seduction.</p>
+                <p>Inspired by the duality of the modern woman: audacious and sexy, elegant and enigmatic.</p>
             </div></div>
         </div>
         <div class="row rev">
             <div class="img-box"><img src="assets/gg-detail-right.jpg"></div>
             <div class="txt-box"><div class="text-glow-free">
                 <h3>OLFACTORY NOTES</h3>
-                <p><span class="highlight">Top:</span> Almond, Coffee, Bergamot and Lemon. A vibrant and energetic start.</p>
-                <p><span class="highlight">Heart:</span> Tuberose, Jasmine Sambac, Orris and Orange Blossom. The heart is rich, white floral, and feminine.</p>
-                <p><span class="highlight">Base:</span> Tonka Bean, Cacao, Vanilla, Praline, Sandalwood and Amber. A dark, gourmand, and velvet-smooth finish.</p>
+                <p><span class="highlight">Top:</span> Amande (5-15 min).</p>
+                <p><span class="highlight">Heart:</span> Jasmin & Tubéreuse (20-60 min).</p>
+                <p><span class="highlight">Base:</span> Fève Tonka & Cacao (jusqu'à 6h).</p>
             </div></div>
         </div>
         <div class="purchase-area">
@@ -221,8 +255,8 @@
                     <img src="assets/gg-thumb.png" class="mini-thumb">
                 </div>
                 <div class="size-container">
-                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>± 80 SPRAYS</span></div>
-                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>± 160 SPRAYS</span></div>
+                    <div class="size-box" onclick="selectSize(this, 199, 'sec4')">5ML<span>80 SPRAYS</span></div>
+                    <div class="size-box active-size" onclick="selectSize(this, 319, 'sec4')">10ML<span>160 SPRAYS</span></div>
                 </div>
             </div>
             <div style="flex:1.2"><form><input placeholder="FULL NAME"><input placeholder="PHONE NUMBER"><input placeholder="CITY"><button type="button" class="order-btn">ORDER NOW | 319 DH</button></form></div>
@@ -249,8 +283,6 @@
                 if(rect.top >= -window.innerHeight/2 && rect.top <= window.innerHeight/2) {
                     currentIdx = index;
                     document.documentElement.style.setProperty('--current-arrow-color', colors[index]);
-                    
-                    // تحويل السهم إذا وصلنا للقسم الأخير
                     if(currentIdx === sections.length - 1) {
                         arrow.classList.add('arrow-up');
                         arrow.style.animation = "bounce-up 2s infinite";
@@ -264,10 +296,8 @@
 
         scrollBtn.onclick = () => {
             if(currentIdx === sections.length - 1) {
-                // إذا كنا في الأخير، نرجع للأول
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                // نزيد القسم التالي
                 document.getElementById(sections[currentIdx + 1]).scrollIntoView({ behavior: 'smooth' });
             }
         };
