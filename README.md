@@ -36,11 +36,21 @@
         }
         }
 
-        .scroll-trigger { 
-            position: fixed; top: 75%; right: 25px; 
+       .scroll-trigger { 
+            position: fixed; 
+            top: 85%; /* هبطناه شوية لتحت باش يبعد على الزحام */
+            right: 30px; /* دفعناه لليمن باش يرجع لبلاصتو الطبيعية */
             transform: translateY(-50%);
-            width: 40px; height: 40px; z-index: 2000; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
+            width: 45px; 
+            height: 45px; 
+            z-index: 10001; /* خاصو يكون كبر من z-index ديال اللوغو باش يبقى ديما هو الفوقاني */
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background: rgba(0,0,0,0.5) !important; /* زدت ليه خلفية خفيفة باش يبان فوق الصور */
+            border-radius: 50%;
+        }
         }
         .arrow-icon { 
             width: 20px; height: 20px; 
