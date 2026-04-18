@@ -754,22 +754,22 @@
             <span onclick="toggleVeloriaChat()" style="cursor: pointer; font-size: 20px; color: white;">×</span>
         </div>
         
-        <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; height: 320px;">
-            <div style="background: #eee; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; color: #333;">
+        <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; background: #ffffff; display: flex; flex-direction: column; gap: 10px; height: 320px;">
+            <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; color: #333;">
                 مرحباً بيك في Veloria Beauty! ✨ أنا خبير العطور ديالك، كيفاش نقدر نعاونك اليوم؟
             </div>
         </div>
 
         <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 5px; background: white;">
-            <input type="text" id="user-msg" placeholder="اكتب سؤالك هنا..." style="flex: 1; border: 1px solid #ddd; padding: 10px; border-radius: 20px; outline: none; font-size: 14px;">
+            <input type="text" id="user-msg" placeholder="اكتب سؤالك هنا..." style="flex: 1; border: 1px solid #ddd; padding: 10px; border-radius: 20px; outline: none; font-size: 14px; color: black !important;">
             <button onclick="sendToVeloria()" style="background: #b8860b; border: none; color: white; padding: 10px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;">إرسال</button>
         </div>
     </div>
 </div>
 
 <script>
-    // الرابط اللي خديناه من Google Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbz5xlaQ1pExGMv3WWIQvjj5QyHNZsJRhXiBKwCortIC_IMMDjr-JSE0aB4Ek4D54gOx/exec";
+    // هاد الرابط هو اللي كيربط الموقع بـ Gemini اللي قاديتي في Google Script
+    const scriptURL = "https://script.google.com/macros/s/AKfyc bzLLH3fksyvAytPcHzzwhxHJmAxL3i-PAolNa_owBFUCdNiHTDB5oU8mzAtJxcJPMGw/exec";
 
     function toggleVeloriaChat() {
         const win = document.getElementById('chat-window');
@@ -783,14 +783,12 @@
 
         if (!msg) return;
 
-        // ميساج ديال الزبون
         container.innerHTML += `<div style="background: #b8860b; color: white; padding: 10px; border-radius: 10px; align-self: flex-end; font-size: 14px; max-width: 85%;">${msg}</div>`;
         input.value = '';
         container.scrollTop = container.scrollHeight;
 
-        // حالة جاري الرد
         const loadingId = 'loading-' + Date.now();
-        container.innerHTML += `<div id="${loadingId}" style="background: #eee; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 12px; color: #777;">جاري التفكير...</div>`;
+        container.innerHTML += `<div id="${loadingId}" style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 12px; color: #777;">جاري التفكير...</div>`;
         container.scrollTop = container.scrollHeight;
 
         try {
@@ -801,10 +799,10 @@
             const reply = await response.text();
             
             document.getElementById(loadingId).remove();
-            container.innerHTML += `<div style="background: #eee; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; max-width: 85%; color: #333;">${reply}</div>`;
+            container.innerHTML += `<div style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; max-width: 85%; color: #333;">${reply}</div>`;
             container.scrollTop = container.scrollHeight;
         } catch (error) {
-            document.getElementById(loadingId).innerText = "عذراً، كاين مشكل في الاتصال بالانترنت.";
+            document.getElementById(loadingId).innerText = "عذراً، كاين مشكل في الاتصال. جرب مرة أخرى.";
         }
     }
 
