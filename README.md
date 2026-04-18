@@ -1,4 +1,4 @@
-<html lang="en">
+[<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -283,5 +283,23 @@ a[href*="veloriabeauty.github.io"] {
         };
   
     </script>
+    <script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+
+  Typebot.initBubble({
+    typebot: "my-typebot-v5y1jji",
+    previewMessage: { message: "مرحباً بيك! محتاجة مساعدة في اختيار عطر؟" },
+    theme: {
+      placement: "left",
+      button: {
+        backgroundColor: "#1D1D1D",
+        customIconSrc:
+          "https://s3.typebotstorage.com/public/workspaces/cmo1ozjlf000006jon0c0dnhf/typebots/cmo25o37s000007mi2v5y1jji/bubble-icon?v=1776539635531",
+        size: "large",
+      },
+      chatWindow: { backgroundColor: "#171923" },
+    },
+  });
+</script>
+
 </body>
-</html>
