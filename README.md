@@ -593,77 +593,53 @@
 
 
         function sendOrder(sectionId, productName) {
+    const section = document.getElementById(sectionId);
+    const nameInput = section.querySelector('input[name="name"]');
+    const phoneInput = section.querySelector('input[name="phone"]');
+    const cityInput = section.querySelector('input[name="city"]');
+    
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const city = cityInput.value.trim();
+    
+    const size = section.querySelector('.active-size') ? section.querySelector('.active-size').innerText.split('\n')[0] : "10ML";
+    const priceText = section.querySelector('.order-btn').innerText;
+    const price = priceText.includes('|') ? priceText.split('|')[1].trim() : priceText;
 
-            const section = document.getElementById(sectionId);
+    if(!name || !phone || !city) {
+        alert("عافاك عمر المعلومات كاملة");
+        return;
+    }
 
-            const name = section.querySelector('input[name="name"]').value;
+    // هاد التوكن خاصو يتبدل بواحد جديد حيت القديم تسرب و غالبا تحبس
+    const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
+    const chatId = "7635707772"; 
+    
+    const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
+                    `📦 *المنتوج:* ${productName}\n` +
+                    `📏 *القياس:* ${size}\n` +
+                    `💰 *الثمن:* ${price}\n` +
+                    `--------------------------\n` +
+                    `👤 *الاسم:* ${name}\n` +
+                    `📞 *الهاتف:* ${phone}\n` +
+                    `📍 *المدينة:* ${city}\n\n` +
+                    `✅ يونس، كليان جديد كيتسناك!`;
 
-            const phone = section.querySelector('input[name="phone"]').value;
-
-            const city = section.querySelector('input[name="city"]').value;
-
-            const size = section.querySelector('.active-size').innerText.split('\n')[0];
-
-            const price = section.querySelector('.order-btn').innerText.split('|')[1].trim();
-
-
-
-            if(!name || !phone || !city) {
-
-                alert("عافاك عمر المعلومات كاملة");
-
-                return;
-
-            }
-
-
-
-            const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
-
-            const chatId = "7635707772"; 
-
-            
-
-            const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
-
-                            `📦 *المنتوج:* ${productName}\n` +
-
-                            `📏 *القياس:* ${size}\n` +
-
-                            `💰 *الثمن:* ${price}\n` +
-
-                            `--------------------------\n` +
-
-                            `👤 *الاسم:* ${name}\n` +
-
-                            `📞 *الهاتف:* ${phone}\n` +
-
-                            `📍 *المدينة:* ${city}\n\n` +
-
-                            `✅ يونس، كليان جديد كيتسناك!`;
-
-
-
-            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-
-                method: 'POST',
-
-                headers: { 'Content-Type': 'application/json' },
-
-                body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
-
-            })
-
-            .then(res => {
-
-                alert("شكراً! تم إرسال طلبك بنجاح.");
-
-                section.querySelector('form').reset();
-
-            })
-
-            .catch(err => alert("وقع مشكل فالاتصال، حاول مرة أخرى."));
-
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+    })
+    .then(res => {
+        if(res.ok) {
+            alert("شكراً! تم إرسال طلبك بنجاح.");
+            section.querySelector('form').reset();
+        } else {
+            alert("مشكل فالتوكن ديال البوت، خاصو يتبدل.");
+        }
+    })
+    .catch(err => alert("وقع مشكل فالاتصال، حاول مرة أخرى."));
+}
         }
 
 
