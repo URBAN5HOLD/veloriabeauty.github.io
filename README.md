@@ -793,50 +793,6 @@
 </div>
 
 <script>
-    // الرابط اللي صيفطتي دابا - تم وضعه بدقة
-    const scriptURL = "https://script.google.com/macros/s/AKfycby5W35LTTV2Fc5rxt1VmaUflMDIhZy-ddq23hLjRTIitoMlMdb0lNRA7L-pYdArR8Y/exec";
-
-    function toggleVeloriaChat() {
-        const win = document.getElementById('chat-window');
-        win.style.display = win.style.display === 'none' ? 'flex' : 'none';
-    }
-
-    async function sendToVeloria() {
-        const input = document.getElementById('user-msg');
-        const container = document.getElementById('chat-messages');
-        const msg = input.value.trim();
-
-        if (!msg) return;
-
-        // رسالة الزبون
-        container.innerHTML += `<div style="background: #b8860b; color: white; padding: 10px; border-radius: 10px; align-self: flex-end; font-size: 14px; max-width: 85%;">${msg}</div>`;
-        input.value = '';
-        container.scrollTop = container.scrollHeight;
-
-        // حالة الانتظار
-        const loadingId = 'loading-' + Date.now();
-        container.innerHTML += `<div id="${loadingId}" style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 12px; color: #777;">جاري التفكير...</div>`;
-        container.scrollTop = container.scrollHeight;
-
-        try {
-            const response = await fetch(scriptURL, {
-                method: 'POST',
-                body: JSON.stringify({ message: msg })
-            });
-            const reply = await response.text();
-            
-            document.getElementById(loadingId).remove();
-            container.innerHTML += `<div style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; max-width: 85%; color: #333;">${reply}</div>`;
-            container.scrollTop = container.scrollHeight;
-        } catch (error) {
-            document.getElementById(loadingId).innerText = "عذراً، كاين مشكل في الاتصال. جرب مرة أخرى.";
-        }
-    }
-
-    document.getElementById('user-msg').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') sendToVeloria();
-    });
-</script>
 </body>
 
 </html>
