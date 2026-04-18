@@ -281,6 +281,65 @@ a[href*="veloriabeauty.github.io"] {
                 document.getElementById(sections[currentIdx + 1]).scrollIntoView({ behavior: 'smooth' });
             }
         };
+  
     </script>
+<style>
+  #interactive-cat {
+    position: fixed;
+    width: 120px; /* تقدر تصغر أو تكبر القط من هنا */
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    bottom: 50px;
+    right: 50px;
+  }
+  .scared {
+    transform: scale(0.3) rotate(20deg);
+    opacity: 0.2;
+    filter: blur(2px);
+  }
+</style>
+
+<img src="cat.gif" id="interactive-cat" alt="Veloria Cat">
+
+<script>
+  const cat = document.getElementById('interactive-cat');
+  // هنا خاصك تآكد بلي صورة العطر عندها id="perfume-img"
+  const perfume = document.getElementById('perfume-img') || document.querySelector('img');
+
+  // حركة عشوائية
+  function moveCat() {
+    if (cat.classList.contains('scared')) return;
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 150);
+    cat.style.left = x + 'px';
+    cat.style.top = y + 'px';
+  }
+
+  // القط كيهجم على العطر كل 12 ثانية
+  setInterval(() => {
+    if (perfume && !cat.classList.contains('scared')) {
+      const rect = perfume.getBoundingClientRect();
+      cat.style.left = (rect.left + 20) + 'px';
+      cat.style.top = (rect.top + 20) + 'px';
+    }
+  }, 12000);
+
+  // القط كيهرب ملي تكليكي عليه
+  cat.addEventListener('click', () => {
+    cat.classList.add('scared');
+    if (perfume) {
+      const rect = perfume.getBoundingClientRect();
+      cat.style.left = rect.left + 'px';
+      cat.style.top = rect.top + 'px';
+    }
+    setTimeout(() => {
+      cat.classList.remove('scared');
+      moveCat();
+    }, 3000);
+  });
+
+  setInterval(moveCat, 6000);
+</script>
 </body>
 </html>
