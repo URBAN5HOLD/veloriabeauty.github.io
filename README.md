@@ -576,149 +576,60 @@
 
 
 
-    <script>
-
-        function selectSize(element, price, sectionId) {
-
-            const section = document.getElementById(sectionId);
-
-            section.querySelectorAll('.size-box').forEach(box => box.classList.remove('active-size'));
-
-            element.classList.add('active-size');
-
-            section.querySelector('.order-btn').innerText = `ORDER NOW | ${price} DH`;
-
-        }
-
-
-
-        function sendOrder(sectionId, productName) {
+   <script>
+function sendOrder(sectionId, productName) {
     const section = document.getElementById(sectionId);
-    const nameInput = section.querySelector('input[name="name"]');
-    const phoneInput = section.querySelector('input[name="phone"]');
-    const cityInput = section.querySelector('input[name="city"]');
-    
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const city = cityInput.value.trim();
-    
-    const size = section.querySelector('.active-size') ? section.querySelector('.active-size').innerText.split('\n')[0] : "10ML";
-    const priceText = section.querySelector('.order-btn').innerText;
-    const price = priceText.includes('|') ? priceText.split('|')[1].trim() : priceText;
 
-    if(!name || !phone || !city) {
-        alert("عافاك عمر المعلومات كاملة");
+    const name = section.querySelector('input[name="name"]').value.trim();
+    const phone = section.querySelector('input[name="phone"]').value.trim();
+    const city = section.querySelector('input[name="city"]').value.trim();
+
+    if (!name || !phone || !city) {
+        alert("عمر جميع المعلومات");
         return;
     }
 
-    // هاد التوكن خاصو يتبدل بواحد جديد حيت القديم تسرب و غالبا تحبس
+    const size = section.querySelector('.active-size')?.innerText || "10ML";
+    const price = section.querySelector('.order-btn').innerText;
+
+    // 🔐 PUT YOUR NEW TOKEN HERE
     const botToken = "8751066528:AAG3zm-hNENKPnAqEAHb1zBsFVSB6mVatT8";
-    const chatId = "7635707772"; 
-    
-    const message = `🚀 *طلب جديد: Velooria Beauty*\n\n` +
-                    `📦 *المنتوج:* ${productName}\n` +
-                    `📏 *القياس:* ${size}\n` +
-                    `💰 *الثمن:* ${price}\n` +
-                    `--------------------------\n` +
-                    `👤 *الاسم:* ${name}\n` +
-                    `📞 *الهاتف:* ${phone}\n` +
-                    `📍 *المدينة:* ${city}\n\n` +
-                    `✅ يونس، كليان جديد كيتسناك!`;
+    const chatId = "7635707772";
+
+    const message =
+`🚀 NEW ORDER
+Product: ${productName}
+Size: ${size}
+Price: ${price}
+
+Name: ${name}
+Phone: ${phone}
+City: ${city}`;
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+        })
     })
-    .then(res => {
-        if(res.ok) {
-            alert("شكراً! تم إرسال طلبك بنجاح.");
-            section.querySelector('form').reset();
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok) {
+            alert("Order sent successfully");
+            section.querySelectorAll("input").forEach(i => i.value = "");
         } else {
-            alert("مشكل فالتوكن ديال البوت، خاصو يتبدل.");
+            alert("Telegram error");
+            console.log(data);
         }
     })
-    .catch(err => alert("وقع مشكل فالاتصال، حاول مرة أخرى."));
+    .catch(err => {
+        console.log(err);
+        alert("Network error");
+    });
 }
-        }
-
-
-
-        const sections = ['sec1', 'sec2', 'sec3', 'sec4'];
-
-        const colors = ['#4A90E2', '#CD7F32', '#D4AF37', '#1a4d99'];
-
-        let currentIdx = 0;
-
-        const scrollBtn = document.getElementById('scrollBtn');
-
-        const arrow = scrollBtn.querySelector('.arrow-icon');
-
-
-
-        window.addEventListener('scroll', () => {
-
-            sections.forEach((id, index) => {
-
-                const rect = document.getElementById(id).getBoundingClientRect();
-
-                if(rect.top >= -window.innerHeight/2 && rect.top <= window.innerHeight/2) {
-
-                    currentIdx = index;
-
-                    document.documentElement.style.setProperty('--current-arrow-color', colors[index]);
-
-                    if(currentIdx === sections.length - 1) {
-
-                        arrow.classList.add('arrow-up');
-
-                        arrow.style.animation = "bounce-up 2s infinite";
-
-                    } else {
-
-                        arrow.classList.remove('arrow-up');
-
-                        arrow.style.animation = "bounce 2s infinite";
-
-                    }
-
-                }
-
-            });
-
-        });
-
-
-
-       scrollBtn.onclick = () => {
-
-    if(currentIdx === sections.length - 1) {
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    } else {
-
-        const nextSection = document.getElementById(sections[currentIdx + 1]);
-
-        // كنقصو 70px (تقريباً طول اللوغو) باش يجي الفيديو هو هداك مع الحافة
-
-        const offset = nextSection.offsetTop - 70; 
-
-        
-
-        window.scrollTo({
-
-            top: offset,
-
-            behavior: 'smooth'
-
-        });
-
-    }
-
-};
-
-    </script>
+</script>
 
 </body>
 
