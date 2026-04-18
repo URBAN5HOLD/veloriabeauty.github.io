@@ -45,6 +45,11 @@
         .stron-t { --color: #CD7F32; --glow-color: rgba(205, 127, 50, 0.35); }
         .libre-t { --color: #D4AF37; --glow-color: rgba(212, 175, 55, 0.35); }
         .gg-t { --color: #1a4d99; --glow-color: rgba(26, 77, 153, 0.35); }
+        /* هاد الكود كيخفي الرابط تماماً وما كيخليش بلاصتو خاوية */
+a[href*="veloriabeauty.github.io"] {
+    display: none !important;
+    visibility: hidden !important;
+}
     </style>
 </head>
 <body>
