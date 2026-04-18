@@ -1,4 +1,4 @@
-[<html lang="en">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BSNJLYWR0"></script>
@@ -9,6 +9,11 @@
 
   gtag('config', 'G-4BSNJLYWR0');
 </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Velooria Beauty | Official Luxury Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Velooria Beauty | Official Luxury Collection</title>
@@ -70,7 +75,7 @@ a[href*="veloriabeauty.github.io"] {
         <div class="glow-center"></div>
         <div class="v-header"><video autoplay muted loop playsinline class="bg-v"><source src="assets/sauvage.mp4" type="video/mp4"></video></div>
         <div class="bottle-center">
-            <img src="sauvage-bottle.png" id="perfume-img" alt="Sauvage">
+            <img src="assets/sauvage-bottle.png" class="img-bottle">
             <h1 class="brand-logo">SAUVAGE ELIXIR</h1>
             <div class="perfume-sub">EXTRAIT DE PARFUM</div>
         </div>
@@ -290,9 +295,8 @@ a[href*="veloriabeauty.github.io"] {
                 document.getElementById(sections[currentIdx + 1]).scrollIntoView({ behavior: 'smooth' });
             }
         };
-  
     </script>
-    <script type="module">
+ <script type="module">
   import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
 
   Typebot.initBubble({
@@ -310,5 +314,5 @@ a[href*="veloriabeauty.github.io"] {
     },
   });
 </script>
-
 </body>
+</html>
