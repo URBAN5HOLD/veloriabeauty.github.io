@@ -768,8 +768,33 @@
 </div>
 
 <script>
-    // هاد الرابط هو اللي كيربط الموقع بـ Gemini اللي قاديتي في Google Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzLLH3fksyvAytPcHzzwhxHJmAxL3i-PAolNa_owBFUCdNiHTDB5oU8mzAtJxcJPMGw/exec";
+<div id="veloria-ai-chat" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: Arial, sans-serif;">
+    <div id="chat-icon" onclick="toggleVeloriaChat()" style="background: linear-gradient(135deg, #b8860b, #8b6508); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <span style="color: white; font-size: 30px;">💬</span>
+    </div>
+
+    <div id="chat-window" style="display: none; width: 320px; height: 460px; background: white; border-radius: 15px; flex-direction: column; box-shadow: 0 5px 25px rgba(0,0,0,0.2); overflow: hidden; position: absolute; bottom: 80px; right: 0; border: 1px solid #b8860b;">
+        <div style="background: #1a1a1a; color: #b8860b; padding: 15px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-weight: bold;">Veloria Beauty AI</span>
+            <span onclick="toggleVeloriaChat()" style="cursor: pointer; font-size: 20px; color: white;">×</span>
+        </div>
+        
+        <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; background: #ffffff; display: flex; flex-direction: column; gap: 10px; height: 320px;">
+            <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 14px; color: #333;">
+                مرحباً بيك في Veloria Beauty! ✨ أنا خبير العطور ديالك، كيفاش نقدر نعاونك اليوم؟
+            </div>
+        </div>
+
+        <div style="padding: 10px; border-top: 1px solid #eee; display: flex; gap: 5px; background: white;">
+            <input type="text" id="user-msg" placeholder="اكتب سؤالك هنا..." style="flex: 1; border: 1px solid #ddd; padding: 10px; border-radius: 20px; outline: none; font-size: 14px; color: black !important;">
+            <button onclick="sendToVeloria()" style="background: #b8860b; border: none; color: white; padding: 10px 15px; border-radius: 20px; cursor: pointer; font-weight: bold;">إرسال</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // الرابط اللي صيفطتي دابا - تم وضعه بدقة
+    const scriptURL = "https://script.google.com/macros/s/AKfycby5W35LTTV2Fc5rxt1VmaUflMDIhZy-ddq23hLjRTIitoMlMdb0lNRA7L-pYdArR8Y/exec";
 
     function toggleVeloriaChat() {
         const win = document.getElementById('chat-window');
@@ -783,10 +808,12 @@
 
         if (!msg) return;
 
+        // رسالة الزبون
         container.innerHTML += `<div style="background: #b8860b; color: white; padding: 10px; border-radius: 10px; align-self: flex-end; font-size: 14px; max-width: 85%;">${msg}</div>`;
         input.value = '';
         container.scrollTop = container.scrollHeight;
 
+        // حالة الانتظار
         const loadingId = 'loading-' + Date.now();
         container.innerHTML += `<div id="${loadingId}" style="background: #f0f0f0; padding: 10px; border-radius: 10px; align-self: flex-start; font-size: 12px; color: #777;">جاري التفكير...</div>`;
         container.scrollTop = container.scrollHeight;
