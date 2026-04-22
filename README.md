@@ -282,7 +282,6 @@ a[href*="veloriabeauty.github.io"] {
             }
         };
     </script>
-
 <script type="module">
   import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
 
@@ -300,6 +299,5 @@ a[href*="veloriabeauty.github.io"] {
       chatWindow: { backgroundColor: "#171923" },
     },
   });
-
 </body>
 </html>
