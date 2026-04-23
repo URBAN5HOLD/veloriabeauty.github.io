@@ -20,8 +20,19 @@
         .v-header { width: 100%; position: relative; z-index: 1; line-height: 0; }
         .bg-v { width: 100%; height: auto; display: block; }
         .bottle-center { text-align: center; padding: 40px 0; position: relative; z-index: 2; }
-        .img-bottle { width: 65%; max-width: 350px; margin: 0 auto; display: block; filter: drop-shadow(0 0 40px rgba(0,0,0,0.8)); }
-        .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
+.img-bottle { 
+    width: 65%; /* كبرنا النسبة من 32% لـ 65% */
+    max-width: 350px; /* كبرنا الحد الأقصى باش تبان الزجاجة واضحة في الشاشات الكبيرة */
+    margin: 0 auto; 
+    display: block; 
+    filter: drop-shadow(0 0 40px var(--glow-color)); /* زدنا قوة التوهج باش تبان الزجاجة طائرة فعلاً */
+    transition: transform 0.5s ease; /* إضافة حركة خفيفة */
+}
+
+/* هاد الجزء كيزيد يكبرهم شوية فاش كتحط عليهم الفأرة (اختياري) */
+.img-bottle:hover {
+    transform: scale(1.05);
+}        .brand-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff !important; letter-spacing: 6px; margin: 10px 0; }
         .perfume-sub { font-size: 0.7rem; color: var(--color) !important; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
         .text-glow-free { position: relative; z-index: 2; padding: 25px; background: radial-gradient(ellipse at center, var(--glow-color) 0%, rgba(0,0,0,0) 85%) !important; }
         .row { display: flex; align-items: center; width: 100%; padding: 50px 10%; gap: 60px; position: relative; z-index: 2; }
